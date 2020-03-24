@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IdentityId** | [**Id**](Id.md) |  | [optional] 
-**SessionId** | **string** | This is the id of the session is going to use in order the perform the signature or the signatures | [optional] 
+**CurrentPassword** | **string** | The current password of the user | [optional] 
+**NewPassword** | **string** | The new password choosen | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

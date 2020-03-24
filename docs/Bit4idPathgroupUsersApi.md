@@ -1,23 +1,28 @@
 # SigningToday.Api.Bit4idPathgroupUsersApi
 
-All URIs are relative to *https://sandbox.signingtoday.com/api/v1*
+All URIs are relative to *https://web.sandbox.signingtoday.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateUser**](Bit4idPathgroupUsersApi.md#createuser) | **POST** /{organization-id}/users | Create a user of the organization
-[**GetUser**](Bit4idPathgroupUsersApi.md#getuser) | **GET** /{organization-id}/users/{user-id} | Get information about an user
-[**ListUsers**](Bit4idPathgroupUsersApi.md#listusers) | **GET** /{organization-id}/users | Enumerate the users of an organization
-[**UpdateUser**](Bit4idPathgroupUsersApi.md#updateuser) | **PUT** /{organization-id}/users/{user-id} | Edit one or more user properties
+[**UserIdDelete**](Bit4idPathgroupUsersApi.md#useriddelete) | **DELETE** /user/{id} | Enable or disable a User
+[**UserIdGet**](Bit4idPathgroupUsersApi.md#useridget) | **GET** /user/{id} | Retrieve a User
+[**UserIdIdentitiesGet**](Bit4idPathgroupUsersApi.md#userididentitiesget) | **GET** /user/{id}/identities | Retrieve User identities
+[**UserIdPut**](Bit4idPathgroupUsersApi.md#useridput) | **PUT** /user/{id} | Update a User
+[**UserIdRolePut**](Bit4idPathgroupUsersApi.md#useridroleput) | **PUT** /user/{id}/role | Change the User role
+[**UsersGet**](Bit4idPathgroupUsersApi.md#usersget) | **GET** /users | Retrieve Users
+[**UsersGroupsGet**](Bit4idPathgroupUsersApi.md#usersgroupsget) | **GET** /users/groups | Retrieve UserGroups
+[**UsersGroupsPost**](Bit4idPathgroupUsersApi.md#usersgroupspost) | **POST** /users/groups | Create a new UserGroups
+[**UsersPost**](Bit4idPathgroupUsersApi.md#userspost) | **POST** /users | Create a new User
 
 
 
-## CreateUser
+## UserIdDelete
 
-> InlineResponse2015 CreateUser (string organizationId, CreateUser createUser)
+> void UserIdDelete (Guid id, bool enabled = null)
 
-Create a user of the organization
+Enable or disable a User
 
-This API allows to create a new user of the organization. 
+This API allows to **enable** or **disable** a User account. 
 
 ### Example
 
@@ -30,29 +35,26 @@ using SigningToday.Model;
 
 namespace Example
 {
-    public class CreateUserExample
+    public class UserIdDeleteExample
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://sandbox.signingtoday.com/api/v1";
-            // Configure API key authorization: ApiKeyAuth
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            Configuration.Default.BasePath = "https://web.sandbox.signingtoday.com/api";
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new Bit4idPathgroupUsersApi(Configuration.Default);
-            var organizationId = api-demo;  // string | The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  (default to "api-demo")
-            var createUser = new CreateUser(); // CreateUser | The new user object to create
+            var id = new Guid(); // Guid | The value of _the unique id_
+            var enabled = true;  // bool | This is a _boolean_ parameter. If true the User is **enabled**  (optional)  (default to false)
 
             try
             {
-                // Create a user of the organization
-                InlineResponse2015 result = apiInstance.CreateUser(organizationId, createUser);
-                Debug.WriteLine(result);
+                // Enable or disable a User
+                apiInstance.UserIdDelete(id, enabled);
             }
             catch (ApiException e)
             {
-                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.CreateUser: " + e.Message );
+                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.UserIdDelete: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -66,115 +68,30 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  | [default to &quot;api-demo&quot;]
- **createUser** | [**CreateUser**](CreateUser.md)| The new user object to create | 
+ **id** | [**Guid**](Guid.md)| The value of _the unique id_ | 
+ **enabled** | **bool**| This is a _boolean_ parameter. If true the User is **enabled**  | [optional] [default to false]
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+void (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
-| **409** | Conflict |  -  |
-
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetUser
-
-> InlineResponse2015 GetUser (string organizationId, Id userId)
-
-Get information about an user
-
-This API allows to get information about an user. 
-
-### Example
-
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using SigningToday.Api;
-using SigningToday.Client;
-using SigningToday.Model;
-
-namespace Example
-{
-    public class GetUserExample
-    {
-        public static void Main()
-        {
-            Configuration.Default.BasePath = "https://sandbox.signingtoday.com/api/v1";
-            // Configure API key authorization: ApiKeyAuth
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new Bit4idPathgroupUsersApi(Configuration.Default);
-            var organizationId = api-demo;  // string | The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  (default to "api-demo")
-            var userId = new Id(); // Id | The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user 
-
-            try
-            {
-                // Get information about an user
-                InlineResponse2015 result = apiInstance.GetUser(organizationId, userId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException e)
-            {
-                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.GetUser: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  | [default to &quot;api-demo&quot;]
- **userId** | [**Id**](Id.md)| The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user  | 
-
-### Return type
-
-[**InlineResponse2015**](InlineResponse2015.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
+| **204** | The request has been satisfyied. No output. |  -  |
+| **401** | User authentication was not effective (e.g. not provided, invalid or expired). |  -  |
+| **403** | User is not allowed to perform the request. |  -  |
+| **404** | The resource was not found. |  -  |
+| **500** | Internal failure of the service. |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -182,13 +99,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListUsers
+## UserIdGet
 
-> InlineResponse20012 ListUsers (string organizationId, string whereMembershipId = null, string whereEmail = null, string whereLastName = null, string whereFirstName = null, int page = null, int count = null)
+> User UserIdGet (Guid id)
 
-Enumerate the users of an organization
+Retrieve a User
 
-This API allows to enumerate the users of an organization. 
+This API allows to retrieve a User.
 
 ### Example
 
@@ -201,34 +118,26 @@ using SigningToday.Model;
 
 namespace Example
 {
-    public class ListUsersExample
+    public class UserIdGetExample
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://sandbox.signingtoday.com/api/v1";
-            // Configure API key authorization: ApiKeyAuth
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            Configuration.Default.BasePath = "https://web.sandbox.signingtoday.com/api";
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new Bit4idPathgroupUsersApi(Configuration.Default);
-            var organizationId = api-demo;  // string | The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  (default to "api-demo")
-            var whereMembershipId = jdo;  // string | Returns the users that have the specified id (optional) 
-            var whereEmail = test@mail.com;  // string | Returns the users that have the specified email (optional) 
-            var whereLastName = Doe;  // string | Returns the users that have the specified last name (optional) 
-            var whereFirstName = John;  // string | Returns the users that have the specified first name (optional) 
-            var page = 1;  // int | Restricts the search to the chosen page (optional) 
-            var count = 56;  // int | Sets the number of users per page to display (optional)  (default to 100)
+            var id = new Guid(); // Guid | The value of _the unique id_
 
             try
             {
-                // Enumerate the users of an organization
-                InlineResponse20012 result = apiInstance.ListUsers(organizationId, whereMembershipId, whereEmail, whereLastName, whereFirstName, page, count);
+                // Retrieve a User
+                User result = apiInstance.UserIdGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.ListUsers: " + e.Message );
+                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.UserIdGet: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -242,34 +151,29 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  | [default to &quot;api-demo&quot;]
- **whereMembershipId** | **string**| Returns the users that have the specified id | [optional] 
- **whereEmail** | **string**| Returns the users that have the specified email | [optional] 
- **whereLastName** | **string**| Returns the users that have the specified last name | [optional] 
- **whereFirstName** | **string**| Returns the users that have the specified first name | [optional] 
- **page** | **int**| Restricts the search to the chosen page | [optional] 
- **count** | **int**| Sets the number of users per page to display | [optional] [default to 100]
+ **id** | [**Guid**](Guid.md)| The value of _the unique id_ | 
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**User**](User.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
+| **200** | The data matching the selection parameters. |  -  |
+| **401** | User authentication was not effective (e.g. not provided, invalid or expired). |  -  |
+| **403** | User is not allowed to perform the request. |  -  |
+| **404** | The resource was not found. |  -  |
+| **500** | Internal failure of the service. |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -277,13 +181,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateUser
+## UserIdIdentitiesGet
 
-> InlineResponse2015 UpdateUser (string organizationId, Id userId, UpdateUser updateUser)
+> List&lt;Identity&gt; UserIdIdentitiesGet (Guid id)
 
-Edit one or more user properties
+Retrieve User identities
 
-This API allows to edit one or more user properties. 
+This API allows to retrieve user identities.
 
 ### Example
 
@@ -296,30 +200,26 @@ using SigningToday.Model;
 
 namespace Example
 {
-    public class UpdateUserExample
+    public class UserIdIdentitiesGetExample
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://sandbox.signingtoday.com/api/v1";
-            // Configure API key authorization: ApiKeyAuth
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            Configuration.Default.BasePath = "https://web.sandbox.signingtoday.com/api";
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new Bit4idPathgroupUsersApi(Configuration.Default);
-            var organizationId = api-demo;  // string | The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  (default to "api-demo")
-            var userId = new Id(); // Id | The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user 
-            var updateUser = new UpdateUser(); // UpdateUser | User properties to be edited
+            var id = new Guid(); // Guid | The value of _the unique id_
 
             try
             {
-                // Edit one or more user properties
-                InlineResponse2015 result = apiInstance.UpdateUser(organizationId, userId, updateUser);
+                // Retrieve User identities
+                List<Identity> result = apiInstance.UserIdIdentitiesGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.UpdateUser: " + e.Message );
+                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.UserIdIdentitiesGet: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -333,30 +233,541 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  | [default to &quot;api-demo&quot;]
- **userId** | [**Id**](Id.md)| The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user  | 
- **updateUser** | [**UpdateUser**](UpdateUser.md)| User properties to be edited | 
+ **id** | [**Guid**](Guid.md)| The value of _the unique id_ | 
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**List&lt;Identity&gt;**](Identity.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
+| **200** | The identities associated to the user. |  -  |
+| **401** | User authentication was not effective (e.g. not provided, invalid or expired). |  -  |
+| **403** | User is not allowed to perform the request. |  -  |
+| **404** | The resource was not found. |  -  |
+| **500** | Internal failure of the service. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UserIdPut
+
+> void UserIdPut (Guid id, User user)
+
+Update a User
+
+This API allows to update a User.
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using SigningToday.Api;
+using SigningToday.Client;
+using SigningToday.Model;
+
+namespace Example
+{
+    public class UserIdPutExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://web.sandbox.signingtoday.com/api";
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new Bit4idPathgroupUsersApi(Configuration.Default);
+            var id = new Guid(); // Guid | The value of _the unique id_
+            var user = new User(); // User | User replacing current object.
+
+            try
+            {
+                // Update a User
+                apiInstance.UserIdPut(id, user);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.UserIdPut: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**Guid**](Guid.md)| The value of _the unique id_ | 
+ **user** | [**User**](User.md)| User replacing current object. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | The request has been satisfyied. No output. |  -  |
+| **400** | Result of a client passing incorrect or invalid data. |  -  |
+| **401** | User authentication was not effective (e.g. not provided, invalid or expired). |  -  |
+| **403** | User is not allowed to perform the request. |  -  |
+| **404** | The resource was not found. |  -  |
+| **500** | Internal failure of the service. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UserIdRolePut
+
+> void UserIdRolePut (Guid id, string newRole)
+
+Change the User role
+
+This API allows to change the permissions associated to the users, (**capabilities**) according to predefined user roles. 
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using SigningToday.Api;
+using SigningToday.Client;
+using SigningToday.Model;
+
+namespace Example
+{
+    public class UserIdRolePutExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://web.sandbox.signingtoday.com/api";
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new Bit4idPathgroupUsersApi(Configuration.Default);
+            var id = new Guid(); // Guid | The value of _the unique id_
+            var newRole = instructor;  // string | The new **role** of the User. Allowed values are **admin**, **instructor**, **signer** 
+
+            try
+            {
+                // Change the User role
+                apiInstance.UserIdRolePut(id, newRole);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.UserIdRolePut: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**Guid**](Guid.md)| The value of _the unique id_ | 
+ **newRole** | **string**| The new **role** of the User. Allowed values are **admin**, **instructor**, **signer**  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | The request has been satisfyied. No output. |  -  |
+| **400** | Result of a client passing incorrect or invalid data. |  -  |
+| **401** | User authentication was not effective (e.g. not provided, invalid or expired). |  -  |
+| **403** | User is not allowed to perform the request. |  -  |
+| **404** | The resource was not found. |  -  |
+| **409** | Cannot satisfy the request because the resource is in an illegal status. |  -  |
+| **500** | Internal failure of the service. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersGet
+
+> UsersGetResponse UsersGet (int top = null, long skip = null, bool count = null, string orderBy = null, string filter = null)
+
+Retrieve Users
+
+This allows to get the list of the Users of an Organization.
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using SigningToday.Api;
+using SigningToday.Client;
+using SigningToday.Model;
+
+namespace Example
+{
+    public class UsersGetExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://web.sandbox.signingtoday.com/api";
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new Bit4idPathgroupUsersApi(Configuration.Default);
+            var top = 32;  // int | A number of results to return. Applied after **$skip**  (optional) 
+            var skip = 64;  // long | An offset into the collection of results (optional) 
+            var count = true;  // bool | If true, the server includes the count of all the items in the response  (optional) 
+            var orderBy = $orderBy=updatedAt;  // string | An ordering definition (eg. $orderBy=updatedAt,desc) (optional) 
+            var filter = $filter=name=="Milk";  // string | A filter definition (eg. $filter=name == \"Milk\" or surname == \"Bread\") (optional) 
+
+            try
+            {
+                // Retrieve Users
+                UsersGetResponse result = apiInstance.UsersGet(top, skip, count, orderBy, filter);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.UsersGet: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **top** | **int**| A number of results to return. Applied after **$skip**  | [optional] 
+ **skip** | **long**| An offset into the collection of results | [optional] 
+ **count** | **bool**| If true, the server includes the count of all the items in the response  | [optional] 
+ **orderBy** | **string**| An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) | [optional] 
+ **filter** | **string**| A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) | [optional] 
+
+### Return type
+
+[**UsersGetResponse**](UsersGetResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The data matching the selection parameters. |  -  |
+| **400** | Result of a client passing incorrect or invalid data. |  -  |
+| **401** | User authentication was not effective (e.g. not provided, invalid or expired). |  -  |
+| **403** | User is not allowed to perform the request. |  -  |
+| **500** | Internal failure of the service. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersGroupsGet
+
+> UserGroupGetResponse UsersGroupsGet (int top = null, long skip = null, bool count = null, string orderBy = null, string filter = null)
+
+Retrieve UserGroups
+
+This API allows to get the list of the UserGroups.
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using SigningToday.Api;
+using SigningToday.Client;
+using SigningToday.Model;
+
+namespace Example
+{
+    public class UsersGroupsGetExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://web.sandbox.signingtoday.com/api";
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new Bit4idPathgroupUsersApi(Configuration.Default);
+            var top = 32;  // int | A number of results to return. Applied after **$skip**  (optional) 
+            var skip = 64;  // long | An offset into the collection of results (optional) 
+            var count = true;  // bool | If true, the server includes the count of all the items in the response  (optional) 
+            var orderBy = $orderBy=updatedAt;  // string | An ordering definition (eg. $orderBy=updatedAt,desc) (optional) 
+            var filter = $filter=name=="Milk";  // string | A filter definition (eg. $filter=name == \"Milk\" or surname == \"Bread\") (optional) 
+
+            try
+            {
+                // Retrieve UserGroups
+                UserGroupGetResponse result = apiInstance.UsersGroupsGet(top, skip, count, orderBy, filter);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.UsersGroupsGet: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **top** | **int**| A number of results to return. Applied after **$skip**  | [optional] 
+ **skip** | **long**| An offset into the collection of results | [optional] 
+ **count** | **bool**| If true, the server includes the count of all the items in the response  | [optional] 
+ **orderBy** | **string**| An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) | [optional] 
+ **filter** | **string**| A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) | [optional] 
+
+### Return type
+
+[**UserGroupGetResponse**](UserGroupGetResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The data matching the selection parameters. |  -  |
+| **400** | Result of a client passing incorrect or invalid data. |  -  |
+| **401** | User authentication was not effective (e.g. not provided, invalid or expired). |  -  |
+| **403** | User is not allowed to perform the request. |  -  |
+| **500** | Internal failure of the service. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersGroupsPost
+
+> void UsersGroupsPost (List<UserGroup> userGroup)
+
+Create a new UserGroups
+
+This API allows to create a new UserGroups.
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using SigningToday.Api;
+using SigningToday.Client;
+using SigningToday.Model;
+
+namespace Example
+{
+    public class UsersGroupsPostExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://web.sandbox.signingtoday.com/api";
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new Bit4idPathgroupUsersApi(Configuration.Default);
+            var userGroup = new List<UserGroup>(); // List<UserGroup> | UserGroup list to be added.
+
+            try
+            {
+                // Create a new UserGroups
+                apiInstance.UsersGroupsPost(userGroup);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.UsersGroupsPost: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userGroup** | [**List&lt;UserGroup&gt;**](UserGroup.md)| UserGroup list to be added. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | The request has been satisfyied. No output. |  -  |
+| **400** | Result of a client passing incorrect or invalid data. |  -  |
+| **401** | User authentication was not effective (e.g. not provided, invalid or expired). |  -  |
+| **403** | User is not allowed to perform the request. |  -  |
+| **500** | Internal failure of the service. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersPost
+
+> Guid UsersPost (CreateUserRequest createUserRequest)
+
+Create a new User
+
+This API allows to create a new User.
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using SigningToday.Api;
+using SigningToday.Client;
+using SigningToday.Model;
+
+namespace Example
+{
+    public class UsersPostExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://web.sandbox.signingtoday.com/api";
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new Bit4idPathgroupUsersApi(Configuration.Default);
+            var createUserRequest = new CreateUserRequest(); // CreateUserRequest | 
+
+            try
+            {
+                // Create a new User
+                Guid result = apiInstance.UsersPost(createUserRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling Bit4idPathgroupUsersApi.UsersPost: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createUserRequest** | [**CreateUserRequest**](CreateUserRequest.md)|  | 
+
+### Return type
+
+**Guid**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | The request has been satisfyied, new resource created. |  -  |
+| **400** | Result of a client passing incorrect or invalid data. |  -  |
+| **401** | User authentication was not effective (e.g. not provided, invalid or expired). |  -  |
+| **403** | User is not allowed to perform the request. |  -  |
+| **500** | Internal failure of the service. |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChannelPub** | **string** | The channel pub | [optional] 
-**ChannelSub** | **string** | The channel sub | [optional] 
+**File** | **System.IO.Stream** | The file to upload | 
+**Filename** | **string** | The name of the file | 
+**ResourceType** | **string** |  | 
+**Title** | **string** | User-defined title of the resource. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

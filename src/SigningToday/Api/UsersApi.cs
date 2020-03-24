@@ -1,10 +1,10 @@
 /* 
- * Signing Today API
+ * Signing Today Web
  *
- * KlNpZ25pbmcgVG9kYXkqIGVuYWJsZXMgc2VhbWxlc3MgaW50ZWdyYXRpb24gb2YgZGlnaXRhbCBzaWduYXR1cmVzIGludG8gYW55CndlYnNpdGUgYnkgdGhlIHVzZSBvZiBlYXN5IHJlcXVlc3RzIHRvIG91ciBBUEkuIFRoaXMgaXMgdGhlIHNtYXJ0IHdheSBvZgphZGRpbmcgZGlnaXRhbCBzaWduYXR1cmUgc3VwcG9ydCB3aXRoIGEgZ3JlYXQgdXNlciBleHBlcmllbmNlLgoKCipTaWduaW5nIFRvZGF5IEFQSXMqIHVzZSBIVFRQIG1ldGhvZHMgYW5kIGFyZSBSRVNUZnVsIGJhc2VkLCBtb3Jlb3ZlciB0aGV5CmFyZSBwcm90ZWN0ZWQgYnkgYSAqc2VydmVyIHRvIHNlcnZlciBhdXRoZW50aWNhdGlvbiogc3RhbmRhcmQgYnkgdGhlIHVzZSBvZgp0b2tlbnMuCgoKKlNpZ25pbmcgVG9kYXkgQVBJcyogY2FuIGJlIHVzZWQgaW4gdGhlc2UgZW52aXJvbm1lbnRzOgoKCnwgRW52aXJvbm1lbnQgfCBEZXNjcmlwdGlvbiB8IEVuZHBvaW50IHwKfCAtLS0tLS0tLS0tLSB8IC0tLS0tLS0tLS0tIHwgLS0tLS0tLS0gfAp8IFNhbmRib3ggICAgIHwgVGVzdCBlbnZpcm9ubWVudCB8IGBodHRwczovL3NhbmRib3guc2lnbmluZ3RvZGF5LmNvbWAgfAp8IExpdmUgICAgICAgIHwgUHJvZHVjdGlvbiBlbnZpcm9ubWVudCB8IGBodHRwczovL2FwaS5zaWduaW5ndG9kYXkuY29tYCB8CgoKRm9yIGV2ZXJ5IHNpbmdsZSByZXF1ZXN0IHRvIFNpZ25pbmcgVG9kYXkgaGFzIHRvIGJlIGRlZmluZWQgdGhlIGZvbGxvd2luZwoqSFRUUCogaGVhZGVyOgotIGBBdXRob3JpemF0aW9uYCwgd2hpY2ggY29udGFpbnMgdGhlIGF1dGhlbnRpY2F0aW9uIHRva2VuLgoKSWYgdGhlIHJlcXVlc3QgaGFzIGEgYm9keSB0aGFuIGFub3RoZXIgKkhUVFAqIGhlYWRlciBpcyByZXF1ZXN0ZWQ6Ci0gYENvbnRlbnQtVHlwZWAsIHdpdGggYGFwcGxpY2F0aW9uL2pzb25gIHZhbHVlLgoKCkZvbGxvd3MgYW4gZXhhbXBsZSBvZiB1c2FnZSB0byBlbnVtZXJhdGUgYWxsIHRoZSB1c2VyIG9mICpteS1vcmcqCm9yZ2FuaXphdGlvbi4KCioqRXhhbXBsZSoqCgpgYGBqc29uCiQgY3VybCBodHRwczovL3NhbmRib3guc2lnbmluZ3RvZGF5LmNvbS9hcGkvdjEvbXktb3JnL3VzZXJzIFwKICAgIC1IICdBdXRob3JpemF0aW9uOiBUb2tlbiA8YWNjZXNzLXRva2VuPicKYGBgCgojIyBIVFRQIG1ldGhvZHMgdXNlZAoKQVBJcyB1c2UgdGhlIHJpZ2h0IEhUVFAgdmVyYiBpbiBldmVyeSBzaXR1YXRpb24uCgp8IE1ldGhvZCAgIHwgRGVzY3JpcHRpb24gICAgICAgICAgICAgICAgICAgIHwKfCAtLS0tLS0tLSB8IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSB8CnwgYEdFVGAgICAgfCBSZXF1ZXN0IGRhdGEgZnJvbSBhIHJlc291cmNlICAgfAp8IGBQT1NUYCAgIHwgU2VuZCBkYXRhIHRvIGNyZWF0ZSBhIHJlc291cmNlIHwKfCBgUFVUYCAgICB8IFVwZGF0ZSBhIHJlc291cmNlICAgICAgICAgICAgICB8CnwgYFBBVENIYCAgfCBQYXJ0aWFsbHkgdXBkYXRlIGEgcmVzb3VyY2UgICAgfAp8IGBERUxFVEVgIHwgRGVsZXRlIGEgcmVzb3Vyc2UgICAgICAgICAgICAgIHwKCgojIyBSZXNwb25zZSBkZWZpbml0aW9uCgpBbGwgdGhlIHJlc3BvbnNlIGFyZSBpbiBKU09OIGZvcm1hdC4KQXMgcmVzcG9uc2UgdG8gYSByZXF1ZXN0IG9mIGFsbCB1c2VycyBvZiBhbiBvcmdhbml6YXRpb24geW91IHdpbGwgaGF2ZSBhCnJlc3VsdCBsaWtlIHRoaXM6CgpgYGBqc29uCnsKICAgICJwYWdpbmF0aW9uIjogewogICAgICAiY291bnQiOiA3NSwKICAgICAgInByZXZpb3VzIjogImh0dHBzOi8vc2FuZGJveC5zaWduaW5ndG9kYXkuY29tL2FwaS92MS9teS1vcmcvdXNlcnM/cGFnZT0xIiwKICAgICAgIm5leHQiOiAiaHR0cHM6Ly9zYW5kYm94LnNpZ25pbmd0b2RheS5jb20vYXBpL3YxL215LW9yZy91c2Vycz9wYWdlPTMiLAogICAgICAicGFnZXMiOiA4LAogICAgICAicGFnZSI6IDIKICAgIH0sCiAgICAibWV0YSI6IHsKICAgICAgImNvZGUiOiAyMDAKICAgIH0sCiAgICAiZGF0YSI6IFsKICAgICAgewogICAgICAgICJpZCI6ICJqZG8iLAogICAgICAgICJzdGF0dXMiOiAiZW5hYmxlZCIsCiAgICAgICAgInR5cGUiOiAiQmFzaWMgdXNlciBhY2NvdW50IiwKICAgICAgICAiZW1haWwiOiBqb2huZG9lQGR1bW15ZW1haWwuY29tLAogICAgICAgICJmaXJzdF9uYW1lIjogIkpvaG4iLAogICAgICAgICJsYXN0X25hbWUiOiAiRG9lIiwKICAgICAgICAid2FsbGV0IjogW10sCiAgICAgICAgImNyZWF0ZWRfYnkiOiAic3lzdGVtIiwKICAgICAgICAib3duZXIiOiBmYWxzZSwKICAgICAgICAiYXV0b21hdGljIjogZmFsc2UsCiAgICAgICAgInJhbyI6IGZhbHNlCiAgICAgIH0sCiAgICAgIC4uLgogICAgXQogIH0KYGBgCgpUaGUgSlNPTiBvZiB0aGUgcmVzcG9uc2UgaXMgbWFkZSBvZiB0aHJlZSBwYXJ0czoKLSBQYWdpbmF0aW9uCi0gTWV0YQotIERhdGEKCiMjIyBQYWdpbmF0aW9uCgoqUGFnaW5hdGlvbiogb2JqZWN0IGFsbG93cyB0byBzcGxpdCB0aGUgcmVzcG9uc2UgaW50byBwYXJ0cyBhbmQgdGhlbiB0bwpyZWJ1aWxkIGl0IHNlcXVlbnRpYWxseSBieSB0aGUgdXNlIG9mIGBuZXh0YCBhbmQgYHByZXZpb3VzYCBwYXJhbWV0ZXJzLCBieQp3aGljaCB5b3UgZ2V0IHByZXZpb3VzIGFuZCBmb2xsb3dpbmcgYmxvY2tzLiBUaGUgKlBhZ2luYXRpb24qIGlzIHByZXNlbnQKb25seSBpZiB0aGUgcmVzcG9uc2UgaXMgYSBsaXN0IG9mIG9iamVjdHMuCgpUaGUgZ2VuZXJhbCBzdHJ1Y3R1cmUgb2YgKlBhZ2luYXRpb24qIG9iamVjdCBpcyB0aGUgZm9sbG93aW5nOgoKYGBganNvbgp7CiAgICAicGFnaW5hdGlvbiI6IHsKICAgICAgImNvdW50IjogNzUsCiAgICAgICJwcmV2aW91cyI6ICJodHRwczovL3NhbmRib3guc2lnbmluZ3RvZGF5LmNvbS9hcGkvdjEvbXktb3JnL3VzZXJzP3BhZ2U9MSIsCiAgICAgICJuZXh0IjogImh0dHBzOi8vc2FuZGJveC5zaWduaW5ndG9kYXkuY29tL2FwaS92MS9teS1vcmcvdXNlcnM/cGFnZT0zIiwKICAgICAgInBhZ2VzIjogOCwKICAgICAgInBhZ2UiOiAyCiAgICB9LAogICAgLi4uCiAgfQpgYGAKCiMjIyBNZXRhCgoqTWV0YSogb2JqZWN0IGlzIHVzZWQgdG8gZW5yaWNoIHRoZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgcmVzcG9uc2UuIEluIHRoZQpwcmV2aW91cyBleGFtcGxlLCBhIHN1Y2Nlc3NmdWwgY2FzZSBvZiByZXNwb25zZSwgKk1ldGEqIHdpbGwgaGF2ZSB2YWx1ZQpgc3RhdHVzOiAyWFhgLiBJbiBjYXNlIG9mIHVuc3VjY2Vzc2Z1bCByZXNwb25zZSwgKk1ldGEqIHdpbGwgaGF2ZSBmdXJ0aGVyCmluZm9ybWF0aW9uLCBhcyBmb2xsb3dzOgoKYGBganNvbgp7CiAgICAibWV0YSI6IHsKICAgICAgImNvZGUiOiA8SFRUUCBTVEFUVVMgQ09ERT4sCiAgICAgICJlcnJvcl90eXBlIjogPFNUQVRVUyBDT0RFIERFU0NSSVBUSU9OPiwKICAgICAgImVycm9yX21lc3NhZ2UiOiA8RVJST1IgREVTQ1JJUFRJT04+CiAgICB9CiAgfQpgYGAKCiMjIyBEYXRhCgoqRGF0YSogb2JqZWN0IG91dHB1dHMgYXMgb2JqZWN0IG9yIGxpc3Qgb2YgdGhlbS4gQ29udGFpbnMgdGhlIGV4cGVjdGVkIGRhdGEKYXMgcmVxdWVzdGVkIHRvIHRoZSBBUEkuCgojIyBTZWFyY2ggZmlsdGVycwoKU2VhcmNoIGZpbHRlcnMgb2YgdGhlIEFQSSBoYXZlIHRoZSBmb2xsb3dpbmcgc3RydWN0dXJlOgoKYHdoZXJlX0FUVFJJQlVURU5BTUVgPWBWQUxVRWAKCkluIHRoaXMgd2F5IHlvdSBtYWtlIGEgY2FzZS1zZW5zaXRpdmUgc2VhcmNoIG9mICpWQUxVRSouIFlvdSBjYW4gZXh0ZW5kIGl0CnRocm91Z2ggdGhlIERqYW5nbyBsb29rdXAsIG9idGFpbmluZyBtb3JlIHNwZWNpZmljIGZpbHRlcnMuIEZvciBleGFtcGxlOgoKYHdoZXJlX0FUVFJJQlVURU5BTUVfX0xPT0tVUGA9YFZBTFVFYAoKd2hlcmUgKkxPT0tVUCogY2FuIGJlIHJlcGxhY2VkIHdpdGggYGljb250YWluc2AgdG8gaGF2ZSBhIHBhcnRpYWwgaW5zZW5zaXRpdmUKcmVzZWFyY2gsIHdoZXJlCgpgd2hlcmVfZmlyc3RfbmFtZV9faWNvbnRhaW5zYD1gQ0hhYAoKbWF0Y2hlcyB3aXRoIGV2ZXJ5IHVzZXIgdGhhdCBoYXZlIHRoZSAqY2hhKiBzdHJpbmcgaW4gdGhlaXIgbmFtZSwgd2l0aApubyBkaWZmZXJlbmNlcyBiZXR3ZWVuIGNhcGl0YWwgYW5kIGxvd2VyIGNhc2VzLgoKW0hlcmVdKGh0dHBzOi8vZG9jcy5kamFuZ29wcm9qZWN0LmNvbS9lbi8xLjExL3JlZi9tb2RlbHMvcXVlcnlzZXRzLyNmaWVsZC1sb29rdXBzKQp0aGUgbGlzdCBvZiB0aGUgbG9va3Vwcy4KCiMjIFdlYmhvb2tzCgpTaWduaW5nIFRvZGF5IHN1cHBvcnRzIHdlYmhvb2tzIGZvciB0aGUgdXBkYXRlIG9mIERTVHMgYW5kIGlkZW50aXRpZXMgc3RhdHVzLgpZb3UgY2FuIGNob29zZSBpZiB0byB1c2Ugb3Igbm90IHdlYmhvb2tzIGFuZCBpZiB5b3Ugd2FudCB0byByZWNlaXZlIHVwZGF0ZXMKYWJvdXQgRFNUcyBhbmQvb3IgaWRlbnRpdGllcy4gWW91IGNhbiBjb25maWd1cmF0ZSBpdCBvbiBhcHBsaWNhdGlvbiB0b2tlbgpsZXZlbCwgaW4gdGhlICp3ZWJob29rKiBmaWVsZCwgYXMgZm9sbG93czoKCmBgYGpzb24KIndlYmhvb2tzIjogewogICJkc3QiOiAiVVJMIiwKICAiaWRlbnRpdHkiOiAiVVJMIgogIH0KYGBgCgojIyMgRFNUcyBzdGF0dXMgdXBkYXRlCgpEU1RzIHNlbmQgdGhlIGZvbGxvd2luZyBzdGF0dXMgdXBkYXRlczoKLSAqKkRTVF9TVEFUVVNfQ0hBTkdFRCoqOiB3aGVuZXZlciB0aGUgRFNUIGNoYW5nZXMgaXRzIHN0YXR1cwotICoqU0lHTkFUVVJFX1NUQVRVU19DSEFOR0VEKio6IHdoZW5ldmVyIG9uZSBvZiB0aGUgc2lnbmF0dXJlcyBjaGFuZ2VzIGl0cwpzdGF0dXMKCiMjIyMgRFNUX1NUQVRVU19DSEFOR0VECgpTZW5kcyB0aGUgZm9sbG93aW5nIGluZm9ybWF0aW9uOgoKYGBganNvbgp7CiAgICAibWVzc2FnZSI6ICJEU1RfU1RBVFVTX0NIQU5HRUQiLAogICAgImRhdGEiOiB7CiAgICAgICJzdGF0dXMiOiAiPERTVF9TVEFUVVM+IiwKICAgICAgImRzdCI6ICI8RFNUX0lEPiIsCiAgICAgICJyZWFzb24iOiAiPERTVF9SRUFTT04+IgogICAgfQogIH0KYGBgCgojIyMjIFNJR05BVFVSRV9TVEFUVVNfQ0hBTkdFRAoKU2VuZHMgdGhlIGZvbGxvd2luZyBpbmZvcm1hdGlvbjoKCmBgYGpzb24KewogICAgIm1lc3NhZ2UiOiAiU0lHTkFUVVJFX1NUQVRVU19DSEFOR0VEIiwKICAgICJkYXRhIjogewogICAgICAic3RhdHVzIjogIjxTSUdOQVRVUkVfU1RBVFVTPiIsCiAgICAgICJncm91cCI6IDxNRU1CRVJTSElQX0dST1VQX0lOREVYPiwKICAgICAgImRzdCI6IHsKICAgICAgICAiaWQiOiAiPERTVF9JRD4iLAogICAgICAgICJ0aXRsZSI6ICI8RFNUX1RJVExFPiIKICAgICAgfSwKICAgICAgInNpZ25hdHVyZSI6ICI8U0lHTkFUVVJFX0lEPiIsCiAgICAgICJzaWduZXIiOiAiPFNJR05FUl9VU0VSTkFNRT4iLAogICAgICAicG9zaXRpb24iOiAiPFNJR05BVFVSRV9QT1NJVElPTj4iLAogICAgICAiZG9jdW1lbnQiOiB7CiAgICAgICAgImRpc3BsYXlfbmFtZSI6ICI8RE9DVU1FTlRfVElUTEU+IiwKICAgICAgICAiaWQiOiAiPERPQ1VNRU5UX0lEPiIsCiAgICAgICAgIm9yZGVyIjogPERPQ1VNRU5UX0lOREVYPgogICAgICB9LAogICAgICAiYXV0b21hdGljIjogPERFQ0xBUkVTX0lGX1RIRV9TSUdORVJfSVNfQVVUT01BVElDPiwKICAgICAgInBhZ2UiOiAiPFNJR05BVFVSRV9QQUdFPiIKICAgIH0KICB9CmBgYAoKIyMjIElkZW50aXRpZXMgc3RhdHVzIHVwZGF0ZQoKSWRlbnRpdGllcyBzZW5kIHRoZSBmb2xsb3dpbmcgc3RhdHVzIHVwZGF0ZXM6Ci0gKipJREVOVElUWV9SRVFVRVNUX0VOUk9MTEVEKio6IHdoZW5ldmVyIGFuIGlkZW50aXR5IHJlcXVlc3QgaXMgYWN0aXZhdGVkCgojIyMjIElERU5USVRZX1JFUVVFU1RfRU5ST0xMRUQKClNlbmRzIHRoZSBmb2xsb3dpbmcgaW5mb3JtYXRpb246CgpgYGBqc29uCnsKICAgICJtZXNzYWdlIjogIklERU5USVRZX1JFUVVFU1RfRU5ST0xMRUQiLAogICAgImRhdGEiOiB7CiAgICAgICJzdGF0dXMiOiAiPFJFUVVFU1RfU1RBVFVTPiIsCiAgICAgICJyZXF1ZXN0IjogIjxSRVFVRVNUX0lEPiIsCiAgICAgICJ1c2VyIjogIjxBUFBMSUNBTlRfVVNFUk5BTUU+IgogICAgfQogIH0KYGBgCgojIyMgVXJsYmFjawoKU29tZXRpbWVzIG1heSBiZSBuZWNlc3NhcnkgdG8gbWFrZSBhIHJlZGlyZWN0IGFmdGVyIGFuIHVzZXIsIGZyb20gdGhlCnNpZ25hdHVyZSB0cmF5LCBoYXMgY29tcGxldGVkIGhpcyBvcGVyYXRpb25zIG9yIGFjdGl2YXRlZCBhIGNlcnRpZmljYXRlLgoKSWYgc2V0LCByZWRpcmVjdHMgY291bGQgaGFwcGVuIGluIDMgY2FzZXM6Ci0gYWZ0ZXIgYSBzaWduYXR1cmUgb3IgZGVjbGluZQotIGFmdGVyIGEgRFNUIGhhcyBiZWVuIHNpZ25lZCBieSBhbGwgdGhlIHNpZ25lcnMgb3IgY2FuY2VsZWQKLSBhZnRlciB0aGUgYWN0aXZhdGlvbiBvZiBhIGNlcnRpZmljYXRlCgpJbiB0aGUgZmlyc3QgdHdvIGNhc2VzIHRoZSB1cmxiYWNrIHJldHVybnMgdGhlIGZvbGxvd2luZyBpbmZvcm1hdGlvbiB0aHJvdWdoCmEgZGF0YSBmb3JtOgotICoqZHN0LWlkKio6IGlkIG9mIHRoZSBEU1QKLSAqKmRzdC11cmwqKjogc2lnbmF0dXJlX3RpY2tldCBvZiB0aGUgc2lnbmF0dXJlCi0gKipkc3Qtc3RhdHVzKio6IGN1cnJlbnQgc3RhdHVzIG9mIHRoZSBEU1QKLSAqKmRzdC1zaWduYXR1cmUtaWQqKjogaWQgb2YgdGhlIHNpZ25hdHVyZQotICoqZHN0LXNpZ25hdHVyZS1zdGF0dXMqKjogY3VycmVudCBzdGF0dXMgb2YgdGhlIHNpZ25hdHVyZQotICoqdXNlcioqOiB1c2VybmFtZSBvZiB0aGUgc2lnbmVyCi0gKipkZWNsaW5lLXJlYXNvbioqOiBpbiBjYXNlIG9mIGEgcmVmdXNlZCBEU1QgY29udGFpbnMgdGhlIHJlYXNvbiBvZiB0aGUKZGVjbGluZQoKSW4gdGhlIGxhc3QgY2FzZSB0aGUgdXJsYmFjayByZXR1cm5zIHRoZSBmb2xsb3dpbmcgaW5mb3JtYXRpb24gdGhyb3VnaCBhCmRhdGEgZm9ybToKLSAqKnVzZXIqKjogdXNlcm5hbWUgb2YgdGhlIHVzZXIgYWN0aXZhdGVkIHRoZSBjZXJ0aWZpY2F0ZQotICoqaWRlbnRpdHktcHJvdmlkZXIqKjogdGhlIHByb3ZpZGVyIGhhcyBiZWVuIHVzZWQgdG8gaXNzdWUgdGhlIGNlcnRpZmljYXRlCi0gKippZGVudGl0eS1yZXF1ZXN0LWlkKio6IGlkIG9mIHRoZSBlbnJvbGxtZW50IHJlcXVlc3QKLSAqKmlkZW50aXR5LWlkKio6IGlkIG9mIHRoZSBuZXcgaWRlbnRpdHkKLSAqKmlkZW50aXR5LWxhYmVsKio6IHRoZSBsYWJlbCBhc3NpZ25lZCB0byB0aGUgaWRlbnRpdHkKLSAqKmlkZW50aXR5LWNlcnRpZmljYXRlKio6IHB1YmxpYyBrZXkgb2YgdGhlIGNlcnRpZmljYXRlCgoK
+ * *Signing Today* is the perfect Digital Signature Gateway. Whenever in Your workflow You need to add one or more Digital Signatures to Your document, *Signing Today* is the right choice. You prepare Your documents, *Signing Today* takes care of all the rest: send invitations (`signature tickets`) to signers, collects their signatures, send You back the signed document. Integrating *Signing Today* in Your existing applications is very easy. Just follow these API specifications and get inspired by the many examples presented hereafter. 
  *
- * The version of the OpenAPI document: 1.5.0
- * Contact: smartcloud@bit4id.com
+ * The version of the OpenAPI document: 2.0.0
+ * 
  * Generated by: https://github.com/openapitools/openapi-generator.git
  */
 
@@ -25,215 +25,429 @@ namespace SigningToday.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create a user of the organization
+        /// Enable or disable a User
         /// </summary>
         /// <remarks>
-        /// This API allows to create a new user of the organization. 
+        /// This API allows to **enable** or **disable** a User account. 
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="createUser">The new user object to create</param>
-        /// <returns>InlineResponse2015</returns>
-        InlineResponse2015 CreateUser (string organizationId, CreateUser createUser);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="enabled">This is a _boolean_ parameter. If true the User is **enabled**  (optional, default to false)</param>
+        /// <returns></returns>
+        void UserIdDelete (Guid id, bool enabled = default(bool));
 
         /// <summary>
-        /// Create a user of the organization
+        /// Enable or disable a User
         /// </summary>
         /// <remarks>
-        /// This API allows to create a new user of the organization. 
+        /// This API allows to **enable** or **disable** a User account. 
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="createUser">The new user object to create</param>
-        /// <returns>ApiResponse of InlineResponse2015</returns>
-        ApiResponse<InlineResponse2015> CreateUserWithHttpInfo (string organizationId, CreateUser createUser);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="enabled">This is a _boolean_ parameter. If true the User is **enabled**  (optional, default to false)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> UserIdDeleteWithHttpInfo (Guid id, bool enabled = default(bool));
         /// <summary>
-        /// Get information about an user
+        /// Retrieve a User
         /// </summary>
         /// <remarks>
-        /// This API allows to get information about an user. 
+        /// This API allows to retrieve a User.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <returns>InlineResponse2015</returns>
-        InlineResponse2015 GetUser (string organizationId, Id userId);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>User</returns>
+        User UserIdGet (Guid id);
 
         /// <summary>
-        /// Get information about an user
+        /// Retrieve a User
         /// </summary>
         /// <remarks>
-        /// This API allows to get information about an user. 
+        /// This API allows to retrieve a User.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <returns>ApiResponse of InlineResponse2015</returns>
-        ApiResponse<InlineResponse2015> GetUserWithHttpInfo (string organizationId, Id userId);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>ApiResponse of User</returns>
+        ApiResponse<User> UserIdGetWithHttpInfo (Guid id);
         /// <summary>
-        /// Enumerate the users of an organization
+        /// Retrieve User identities
         /// </summary>
         /// <remarks>
-        /// This API allows to enumerate the users of an organization. 
+        /// This API allows to retrieve user identities.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="whereMembershipId">Returns the users that have the specified id (optional)</param>
-        /// <param name="whereEmail">Returns the users that have the specified email (optional)</param>
-        /// <param name="whereLastName">Returns the users that have the specified last name (optional)</param>
-        /// <param name="whereFirstName">Returns the users that have the specified first name (optional)</param>
-        /// <param name="page">Restricts the search to the chosen page (optional)</param>
-        /// <param name="count">Sets the number of users per page to display (optional, default to 100)</param>
-        /// <returns>InlineResponse20012</returns>
-        InlineResponse20012 ListUsers (string organizationId, string whereMembershipId = default(string), string whereEmail = default(string), string whereLastName = default(string), string whereFirstName = default(string), int page = default(int), int count = default(int));
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>List&lt;Identity&gt;</returns>
+        List<Identity> UserIdIdentitiesGet (Guid id);
 
         /// <summary>
-        /// Enumerate the users of an organization
+        /// Retrieve User identities
         /// </summary>
         /// <remarks>
-        /// This API allows to enumerate the users of an organization. 
+        /// This API allows to retrieve user identities.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="whereMembershipId">Returns the users that have the specified id (optional)</param>
-        /// <param name="whereEmail">Returns the users that have the specified email (optional)</param>
-        /// <param name="whereLastName">Returns the users that have the specified last name (optional)</param>
-        /// <param name="whereFirstName">Returns the users that have the specified first name (optional)</param>
-        /// <param name="page">Restricts the search to the chosen page (optional)</param>
-        /// <param name="count">Sets the number of users per page to display (optional, default to 100)</param>
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        ApiResponse<InlineResponse20012> ListUsersWithHttpInfo (string organizationId, string whereMembershipId = default(string), string whereEmail = default(string), string whereLastName = default(string), string whereFirstName = default(string), int page = default(int), int count = default(int));
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>ApiResponse of List&lt;Identity&gt;</returns>
+        ApiResponse<List<Identity>> UserIdIdentitiesGetWithHttpInfo (Guid id);
         /// <summary>
-        /// Edit one or more user properties
+        /// Update a User
         /// </summary>
         /// <remarks>
-        /// This API allows to edit one or more user properties. 
+        /// This API allows to update a User.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <param name="updateUser">User properties to be edited</param>
-        /// <returns>InlineResponse2015</returns>
-        InlineResponse2015 UpdateUser (string organizationId, Id userId, UpdateUser updateUser);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="user">User replacing current object.</param>
+        /// <returns></returns>
+        void UserIdPut (Guid id, User user);
 
         /// <summary>
-        /// Edit one or more user properties
+        /// Update a User
         /// </summary>
         /// <remarks>
-        /// This API allows to edit one or more user properties. 
+        /// This API allows to update a User.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <param name="updateUser">User properties to be edited</param>
-        /// <returns>ApiResponse of InlineResponse2015</returns>
-        ApiResponse<InlineResponse2015> UpdateUserWithHttpInfo (string organizationId, Id userId, UpdateUser updateUser);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="user">User replacing current object.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> UserIdPutWithHttpInfo (Guid id, User user);
+        /// <summary>
+        /// Change the User role
+        /// </summary>
+        /// <remarks>
+        /// This API allows to change the permissions associated to the users, (**capabilities**) according to predefined user roles. 
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="newRole">The new **role** of the User. Allowed values are **admin**, **instructor**, **signer** </param>
+        /// <returns></returns>
+        void UserIdRolePut (Guid id, string newRole);
+
+        /// <summary>
+        /// Change the User role
+        /// </summary>
+        /// <remarks>
+        /// This API allows to change the permissions associated to the users, (**capabilities**) according to predefined user roles. 
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="newRole">The new **role** of the User. Allowed values are **admin**, **instructor**, **signer** </param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> UserIdRolePutWithHttpInfo (Guid id, string newRole);
+        /// <summary>
+        /// Retrieve Users
+        /// </summary>
+        /// <remarks>
+        /// This allows to get the list of the Users of an Organization.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>UsersGetResponse</returns>
+        UsersGetResponse UsersGet (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string));
+
+        /// <summary>
+        /// Retrieve Users
+        /// </summary>
+        /// <remarks>
+        /// This allows to get the list of the Users of an Organization.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>ApiResponse of UsersGetResponse</returns>
+        ApiResponse<UsersGetResponse> UsersGetWithHttpInfo (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string));
+        /// <summary>
+        /// Retrieve UserGroups
+        /// </summary>
+        /// <remarks>
+        /// This API allows to get the list of the UserGroups.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>UserGroupGetResponse</returns>
+        UserGroupGetResponse UsersGroupsGet (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string));
+
+        /// <summary>
+        /// Retrieve UserGroups
+        /// </summary>
+        /// <remarks>
+        /// This API allows to get the list of the UserGroups.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>ApiResponse of UserGroupGetResponse</returns>
+        ApiResponse<UserGroupGetResponse> UsersGroupsGetWithHttpInfo (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string));
+        /// <summary>
+        /// Create a new UserGroups
+        /// </summary>
+        /// <remarks>
+        /// This API allows to create a new UserGroups.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGroup">UserGroup list to be added.</param>
+        /// <returns></returns>
+        void UsersGroupsPost (List<UserGroup> userGroup);
+
+        /// <summary>
+        /// Create a new UserGroups
+        /// </summary>
+        /// <remarks>
+        /// This API allows to create a new UserGroups.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGroup">UserGroup list to be added.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> UsersGroupsPostWithHttpInfo (List<UserGroup> userGroup);
+        /// <summary>
+        /// Create a new User
+        /// </summary>
+        /// <remarks>
+        /// This API allows to create a new User.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createUserRequest"></param>
+        /// <returns>Guid</returns>
+        Guid UsersPost (CreateUserRequest createUserRequest);
+
+        /// <summary>
+        /// Create a new User
+        /// </summary>
+        /// <remarks>
+        /// This API allows to create a new User.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createUserRequest"></param>
+        /// <returns>ApiResponse of Guid</returns>
+        ApiResponse<Guid> UsersPostWithHttpInfo (CreateUserRequest createUserRequest);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Create a user of the organization
+        /// Enable or disable a User
         /// </summary>
         /// <remarks>
-        /// This API allows to create a new user of the organization. 
+        /// This API allows to **enable** or **disable** a User account. 
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="createUser">The new user object to create</param>
-        /// <returns>Task of InlineResponse2015</returns>
-        System.Threading.Tasks.Task<InlineResponse2015> CreateUserAsync (string organizationId, CreateUser createUser);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="enabled">This is a _boolean_ parameter. If true the User is **enabled**  (optional, default to false)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task UserIdDeleteAsync (Guid id, bool enabled = default(bool));
 
         /// <summary>
-        /// Create a user of the organization
+        /// Enable or disable a User
         /// </summary>
         /// <remarks>
-        /// This API allows to create a new user of the organization. 
+        /// This API allows to **enable** or **disable** a User account. 
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="createUser">The new user object to create</param>
-        /// <returns>Task of ApiResponse (InlineResponse2015)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2015>> CreateUserAsyncWithHttpInfo (string organizationId, CreateUser createUser);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="enabled">This is a _boolean_ parameter. If true the User is **enabled**  (optional, default to false)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> UserIdDeleteAsyncWithHttpInfo (Guid id, bool enabled = default(bool));
         /// <summary>
-        /// Get information about an user
+        /// Retrieve a User
         /// </summary>
         /// <remarks>
-        /// This API allows to get information about an user. 
+        /// This API allows to retrieve a User.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <returns>Task of InlineResponse2015</returns>
-        System.Threading.Tasks.Task<InlineResponse2015> GetUserAsync (string organizationId, Id userId);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>Task of User</returns>
+        System.Threading.Tasks.Task<User> UserIdGetAsync (Guid id);
 
         /// <summary>
-        /// Get information about an user
+        /// Retrieve a User
         /// </summary>
         /// <remarks>
-        /// This API allows to get information about an user. 
+        /// This API allows to retrieve a User.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <returns>Task of ApiResponse (InlineResponse2015)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2015>> GetUserAsyncWithHttpInfo (string organizationId, Id userId);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>Task of ApiResponse (User)</returns>
+        System.Threading.Tasks.Task<ApiResponse<User>> UserIdGetAsyncWithHttpInfo (Guid id);
         /// <summary>
-        /// Enumerate the users of an organization
+        /// Retrieve User identities
         /// </summary>
         /// <remarks>
-        /// This API allows to enumerate the users of an organization. 
+        /// This API allows to retrieve user identities.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="whereMembershipId">Returns the users that have the specified id (optional)</param>
-        /// <param name="whereEmail">Returns the users that have the specified email (optional)</param>
-        /// <param name="whereLastName">Returns the users that have the specified last name (optional)</param>
-        /// <param name="whereFirstName">Returns the users that have the specified first name (optional)</param>
-        /// <param name="page">Restricts the search to the chosen page (optional)</param>
-        /// <param name="count">Sets the number of users per page to display (optional, default to 100)</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        System.Threading.Tasks.Task<InlineResponse20012> ListUsersAsync (string organizationId, string whereMembershipId = default(string), string whereEmail = default(string), string whereLastName = default(string), string whereFirstName = default(string), int page = default(int), int count = default(int));
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>Task of List&lt;Identity&gt;</returns>
+        System.Threading.Tasks.Task<List<Identity>> UserIdIdentitiesGetAsync (Guid id);
 
         /// <summary>
-        /// Enumerate the users of an organization
+        /// Retrieve User identities
         /// </summary>
         /// <remarks>
-        /// This API allows to enumerate the users of an organization. 
+        /// This API allows to retrieve user identities.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="whereMembershipId">Returns the users that have the specified id (optional)</param>
-        /// <param name="whereEmail">Returns the users that have the specified email (optional)</param>
-        /// <param name="whereLastName">Returns the users that have the specified last name (optional)</param>
-        /// <param name="whereFirstName">Returns the users that have the specified first name (optional)</param>
-        /// <param name="page">Restricts the search to the chosen page (optional)</param>
-        /// <param name="count">Sets the number of users per page to display (optional, default to 100)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20012>> ListUsersAsyncWithHttpInfo (string organizationId, string whereMembershipId = default(string), string whereEmail = default(string), string whereLastName = default(string), string whereFirstName = default(string), int page = default(int), int count = default(int));
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>Task of ApiResponse (List&lt;Identity&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Identity>>> UserIdIdentitiesGetAsyncWithHttpInfo (Guid id);
         /// <summary>
-        /// Edit one or more user properties
+        /// Update a User
         /// </summary>
         /// <remarks>
-        /// This API allows to edit one or more user properties. 
+        /// This API allows to update a User.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <param name="updateUser">User properties to be edited</param>
-        /// <returns>Task of InlineResponse2015</returns>
-        System.Threading.Tasks.Task<InlineResponse2015> UpdateUserAsync (string organizationId, Id userId, UpdateUser updateUser);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="user">User replacing current object.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task UserIdPutAsync (Guid id, User user);
 
         /// <summary>
-        /// Edit one or more user properties
+        /// Update a User
         /// </summary>
         /// <remarks>
-        /// This API allows to edit one or more user properties. 
+        /// This API allows to update a User.
         /// </remarks>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <param name="updateUser">User properties to be edited</param>
-        /// <returns>Task of ApiResponse (InlineResponse2015)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2015>> UpdateUserAsyncWithHttpInfo (string organizationId, Id userId, UpdateUser updateUser);
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="user">User replacing current object.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> UserIdPutAsyncWithHttpInfo (Guid id, User user);
+        /// <summary>
+        /// Change the User role
+        /// </summary>
+        /// <remarks>
+        /// This API allows to change the permissions associated to the users, (**capabilities**) according to predefined user roles. 
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="newRole">The new **role** of the User. Allowed values are **admin**, **instructor**, **signer** </param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task UserIdRolePutAsync (Guid id, string newRole);
+
+        /// <summary>
+        /// Change the User role
+        /// </summary>
+        /// <remarks>
+        /// This API allows to change the permissions associated to the users, (**capabilities**) according to predefined user roles. 
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="newRole">The new **role** of the User. Allowed values are **admin**, **instructor**, **signer** </param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> UserIdRolePutAsyncWithHttpInfo (Guid id, string newRole);
+        /// <summary>
+        /// Retrieve Users
+        /// </summary>
+        /// <remarks>
+        /// This allows to get the list of the Users of an Organization.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>Task of UsersGetResponse</returns>
+        System.Threading.Tasks.Task<UsersGetResponse> UsersGetAsync (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string));
+
+        /// <summary>
+        /// Retrieve Users
+        /// </summary>
+        /// <remarks>
+        /// This allows to get the list of the Users of an Organization.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>Task of ApiResponse (UsersGetResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UsersGetResponse>> UsersGetAsyncWithHttpInfo (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string));
+        /// <summary>
+        /// Retrieve UserGroups
+        /// </summary>
+        /// <remarks>
+        /// This API allows to get the list of the UserGroups.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>Task of UserGroupGetResponse</returns>
+        System.Threading.Tasks.Task<UserGroupGetResponse> UsersGroupsGetAsync (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string));
+
+        /// <summary>
+        /// Retrieve UserGroups
+        /// </summary>
+        /// <remarks>
+        /// This API allows to get the list of the UserGroups.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>Task of ApiResponse (UserGroupGetResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserGroupGetResponse>> UsersGroupsGetAsyncWithHttpInfo (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string));
+        /// <summary>
+        /// Create a new UserGroups
+        /// </summary>
+        /// <remarks>
+        /// This API allows to create a new UserGroups.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGroup">UserGroup list to be added.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task UsersGroupsPostAsync (List<UserGroup> userGroup);
+
+        /// <summary>
+        /// Create a new UserGroups
+        /// </summary>
+        /// <remarks>
+        /// This API allows to create a new UserGroups.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGroup">UserGroup list to be added.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> UsersGroupsPostAsyncWithHttpInfo (List<UserGroup> userGroup);
+        /// <summary>
+        /// Create a new User
+        /// </summary>
+        /// <remarks>
+        /// This API allows to create a new User.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createUserRequest"></param>
+        /// <returns>Task of Guid</returns>
+        System.Threading.Tasks.Task<Guid> UsersPostAsync (CreateUserRequest createUserRequest);
+
+        /// <summary>
+        /// Create a new User
+        /// </summary>
+        /// <remarks>
+        /// This API allows to create a new User.
+        /// </remarks>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createUserRequest"></param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Guid>> UsersPostAsyncWithHttpInfo (CreateUserRequest createUserRequest);
         #endregion Asynchronous Operations
     }
 
@@ -346,35 +560,31 @@ namespace SigningToday.Api
         }
 
         /// <summary>
-        /// Create a user of the organization This API allows to create a new user of the organization. 
+        /// Enable or disable a User This API allows to **enable** or **disable** a User account. 
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="createUser">The new user object to create</param>
-        /// <returns>InlineResponse2015</returns>
-        public InlineResponse2015 CreateUser (string organizationId, CreateUser createUser)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="enabled">This is a _boolean_ parameter. If true the User is **enabled**  (optional, default to false)</param>
+        /// <returns></returns>
+        public void UserIdDelete (Guid id, bool enabled = default(bool))
         {
-             ApiResponse<InlineResponse2015> localVarResponse = CreateUserWithHttpInfo(organizationId, createUser);
-             return localVarResponse.Data;
+             UserIdDeleteWithHttpInfo(id, enabled);
         }
 
         /// <summary>
-        /// Create a user of the organization This API allows to create a new user of the organization. 
+        /// Enable or disable a User This API allows to **enable** or **disable** a User account. 
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="createUser">The new user object to create</param>
-        /// <returns>ApiResponse of InlineResponse2015</returns>
-        public ApiResponse<InlineResponse2015> CreateUserWithHttpInfo (string organizationId, CreateUser createUser)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="enabled">This is a _boolean_ parameter. If true the User is **enabled**  (optional, default to false)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> UserIdDeleteWithHttpInfo (Guid id, bool enabled = default(bool))
         {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->CreateUser");
-            // verify the required parameter 'createUser' is set
-            if (createUser == null)
-                throw new ApiException(400, "Missing required parameter 'createUser' when calling UsersApi->CreateUser");
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UserIdDelete");
 
-            var localVarPath = "/{organization-id}/users";
+            var localVarPath = "/user/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -384,83 +594,72 @@ namespace SigningToday.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (organizationId != null) localVarPathParams.Add("organization-id", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-            if (createUser != null && createUser.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createUser); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = createUser; // byte array
-            }
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (enabled != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "enabled", enabled)); // query parameter
 
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
             }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("CreateUser", localVarResponse);
+                Exception exception = ExceptionFactory("UserIdDelete", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse2015>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (InlineResponse2015) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2015)));
+                null);
         }
 
         /// <summary>
-        /// Create a user of the organization This API allows to create a new user of the organization. 
+        /// Enable or disable a User This API allows to **enable** or **disable** a User account. 
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="createUser">The new user object to create</param>
-        /// <returns>Task of InlineResponse2015</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2015> CreateUserAsync (string organizationId, CreateUser createUser)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="enabled">This is a _boolean_ parameter. If true the User is **enabled**  (optional, default to false)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task UserIdDeleteAsync (Guid id, bool enabled = default(bool))
         {
-             ApiResponse<InlineResponse2015> localVarResponse = await CreateUserAsyncWithHttpInfo(organizationId, createUser);
-             return localVarResponse.Data;
+             await UserIdDeleteAsyncWithHttpInfo(id, enabled);
 
         }
 
         /// <summary>
-        /// Create a user of the organization This API allows to create a new user of the organization. 
+        /// Enable or disable a User This API allows to **enable** or **disable** a User account. 
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="createUser">The new user object to create</param>
-        /// <returns>Task of ApiResponse (InlineResponse2015)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2015>> CreateUserAsyncWithHttpInfo (string organizationId, CreateUser createUser)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="enabled">This is a _boolean_ parameter. If true the User is **enabled**  (optional, default to false)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UserIdDeleteAsyncWithHttpInfo (Guid id, bool enabled = default(bool))
         {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->CreateUser");
-            // verify the required parameter 'createUser' is set
-            if (createUser == null)
-                throw new ApiException(400, "Missing required parameter 'createUser' when calling UsersApi->CreateUser");
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UserIdDelete");
 
-            var localVarPath = "/{organization-id}/users";
+            var localVarPath = "/user/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -470,82 +669,70 @@ namespace SigningToday.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (organizationId != null) localVarPathParams.Add("organization-id", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-            if (createUser != null && createUser.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createUser); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = createUser; // byte array
-            }
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (enabled != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "enabled", enabled)); // query parameter
 
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
             }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("CreateUser", localVarResponse);
+                Exception exception = ExceptionFactory("UserIdDelete", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse2015>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (InlineResponse2015) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2015)));
+                null);
         }
 
         /// <summary>
-        /// Get information about an user This API allows to get information about an user. 
+        /// Retrieve a User This API allows to retrieve a User.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <returns>InlineResponse2015</returns>
-        public InlineResponse2015 GetUser (string organizationId, Id userId)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>User</returns>
+        public User UserIdGet (Guid id)
         {
-             ApiResponse<InlineResponse2015> localVarResponse = GetUserWithHttpInfo(organizationId, userId);
+             ApiResponse<User> localVarResponse = UserIdGetWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get information about an user This API allows to get information about an user. 
+        /// Retrieve a User This API allows to retrieve a User.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <returns>ApiResponse of InlineResponse2015</returns>
-        public ApiResponse<InlineResponse2015> GetUserWithHttpInfo (string organizationId, Id userId)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>ApiResponse of User</returns>
+        public ApiResponse<User> UserIdGetWithHttpInfo (Guid id)
         {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->GetUser");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUser");
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UserIdGet");
 
-            var localVarPath = "/{organization-id}/users/{user-id}";
+            var localVarPath = "/user/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -560,19 +747,20 @@ namespace SigningToday.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "application/json",
+                "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (organizationId != null) localVarPathParams.Add("organization-id", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-            if (userId != null) localVarPathParams.Add("user-id", this.Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
             }
 
             // make the HTTP request
@@ -584,46 +772,41 @@ namespace SigningToday.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetUser", localVarResponse);
+                Exception exception = ExceptionFactory("UserIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse2015>(localVarStatusCode,
+            return new ApiResponse<User>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (InlineResponse2015) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2015)));
+                (User) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(User)));
         }
 
         /// <summary>
-        /// Get information about an user This API allows to get information about an user. 
+        /// Retrieve a User This API allows to retrieve a User.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <returns>Task of InlineResponse2015</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2015> GetUserAsync (string organizationId, Id userId)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>Task of User</returns>
+        public async System.Threading.Tasks.Task<User> UserIdGetAsync (Guid id)
         {
-             ApiResponse<InlineResponse2015> localVarResponse = await GetUserAsyncWithHttpInfo(organizationId, userId);
+             ApiResponse<User> localVarResponse = await UserIdGetAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get information about an user This API allows to get information about an user. 
+        /// Retrieve a User This API allows to retrieve a User.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <returns>Task of ApiResponse (InlineResponse2015)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2015>> GetUserAsyncWithHttpInfo (string organizationId, Id userId)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>Task of ApiResponse (User)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<User>> UserIdGetAsyncWithHttpInfo (Guid id)
         {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->GetUser");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUser");
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UserIdGet");
 
-            var localVarPath = "/{organization-id}/users/{user-id}";
+            var localVarPath = "/user/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -638,19 +821,20 @@ namespace SigningToday.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "application/json",
+                "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (organizationId != null) localVarPathParams.Add("organization-id", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-            if (userId != null) localVarPathParams.Add("user-id", this.Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
             }
 
             // make the HTTP request
@@ -662,52 +846,40 @@ namespace SigningToday.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetUser", localVarResponse);
+                Exception exception = ExceptionFactory("UserIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse2015>(localVarStatusCode,
+            return new ApiResponse<User>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (InlineResponse2015) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2015)));
+                (User) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(User)));
         }
 
         /// <summary>
-        /// Enumerate the users of an organization This API allows to enumerate the users of an organization. 
+        /// Retrieve User identities This API allows to retrieve user identities.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="whereMembershipId">Returns the users that have the specified id (optional)</param>
-        /// <param name="whereEmail">Returns the users that have the specified email (optional)</param>
-        /// <param name="whereLastName">Returns the users that have the specified last name (optional)</param>
-        /// <param name="whereFirstName">Returns the users that have the specified first name (optional)</param>
-        /// <param name="page">Restricts the search to the chosen page (optional)</param>
-        /// <param name="count">Sets the number of users per page to display (optional, default to 100)</param>
-        /// <returns>InlineResponse20012</returns>
-        public InlineResponse20012 ListUsers (string organizationId, string whereMembershipId = default(string), string whereEmail = default(string), string whereLastName = default(string), string whereFirstName = default(string), int page = default(int), int count = default(int))
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>List&lt;Identity&gt;</returns>
+        public List<Identity> UserIdIdentitiesGet (Guid id)
         {
-             ApiResponse<InlineResponse20012> localVarResponse = ListUsersWithHttpInfo(organizationId, whereMembershipId, whereEmail, whereLastName, whereFirstName, page, count);
+             ApiResponse<List<Identity>> localVarResponse = UserIdIdentitiesGetWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Enumerate the users of an organization This API allows to enumerate the users of an organization. 
+        /// Retrieve User identities This API allows to retrieve user identities.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="whereMembershipId">Returns the users that have the specified id (optional)</param>
-        /// <param name="whereEmail">Returns the users that have the specified email (optional)</param>
-        /// <param name="whereLastName">Returns the users that have the specified last name (optional)</param>
-        /// <param name="whereFirstName">Returns the users that have the specified first name (optional)</param>
-        /// <param name="page">Restricts the search to the chosen page (optional)</param>
-        /// <param name="count">Sets the number of users per page to display (optional, default to 100)</param>
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        public ApiResponse<InlineResponse20012> ListUsersWithHttpInfo (string organizationId, string whereMembershipId = default(string), string whereEmail = default(string), string whereLastName = default(string), string whereFirstName = default(string), int page = default(int), int count = default(int))
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>ApiResponse of List&lt;Identity&gt;</returns>
+        public ApiResponse<List<Identity>> UserIdIdentitiesGetWithHttpInfo (Guid id)
         {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->ListUsers");
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UserIdIdentitiesGet");
 
-            var localVarPath = "/{organization-id}/users";
+            var localVarPath = "/user/{id}/identities";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -722,24 +894,20 @@ namespace SigningToday.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "application/json",
+                "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (organizationId != null) localVarPathParams.Add("organization-id", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-            if (whereMembershipId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "where_membership_id", whereMembershipId)); // query parameter
-            if (whereEmail != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "where_email", whereEmail)); // query parameter
-            if (whereLastName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "where_last_name", whereLastName)); // query parameter
-            if (whereFirstName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "where_first_name", whereFirstName)); // query parameter
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (count != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "count", count)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
             }
 
             // make the HTTP request
@@ -751,53 +919,41 @@ namespace SigningToday.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ListUsers", localVarResponse);
+                Exception exception = ExceptionFactory("UserIdIdentitiesGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse20012>(localVarStatusCode,
+            return new ApiResponse<List<Identity>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (InlineResponse20012) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20012)));
+                (List<Identity>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Identity>)));
         }
 
         /// <summary>
-        /// Enumerate the users of an organization This API allows to enumerate the users of an organization. 
+        /// Retrieve User identities This API allows to retrieve user identities.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="whereMembershipId">Returns the users that have the specified id (optional)</param>
-        /// <param name="whereEmail">Returns the users that have the specified email (optional)</param>
-        /// <param name="whereLastName">Returns the users that have the specified last name (optional)</param>
-        /// <param name="whereFirstName">Returns the users that have the specified first name (optional)</param>
-        /// <param name="page">Restricts the search to the chosen page (optional)</param>
-        /// <param name="count">Sets the number of users per page to display (optional, default to 100)</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20012> ListUsersAsync (string organizationId, string whereMembershipId = default(string), string whereEmail = default(string), string whereLastName = default(string), string whereFirstName = default(string), int page = default(int), int count = default(int))
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>Task of List&lt;Identity&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Identity>> UserIdIdentitiesGetAsync (Guid id)
         {
-             ApiResponse<InlineResponse20012> localVarResponse = await ListUsersAsyncWithHttpInfo(organizationId, whereMembershipId, whereEmail, whereLastName, whereFirstName, page, count);
+             ApiResponse<List<Identity>> localVarResponse = await UserIdIdentitiesGetAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Enumerate the users of an organization This API allows to enumerate the users of an organization. 
+        /// Retrieve User identities This API allows to retrieve user identities.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="whereMembershipId">Returns the users that have the specified id (optional)</param>
-        /// <param name="whereEmail">Returns the users that have the specified email (optional)</param>
-        /// <param name="whereLastName">Returns the users that have the specified last name (optional)</param>
-        /// <param name="whereFirstName">Returns the users that have the specified first name (optional)</param>
-        /// <param name="page">Restricts the search to the chosen page (optional)</param>
-        /// <param name="count">Sets the number of users per page to display (optional, default to 100)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20012>> ListUsersAsyncWithHttpInfo (string organizationId, string whereMembershipId = default(string), string whereEmail = default(string), string whereLastName = default(string), string whereFirstName = default(string), int page = default(int), int count = default(int))
+        /// <param name="id">The value of _the unique id_</param>
+        /// <returns>Task of ApiResponse (List&lt;Identity&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Identity>>> UserIdIdentitiesGetAsyncWithHttpInfo (Guid id)
         {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->ListUsers");
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UserIdIdentitiesGet");
 
-            var localVarPath = "/{organization-id}/users";
+            var localVarPath = "/user/{id}/identities";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -812,24 +968,20 @@ namespace SigningToday.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "application/json",
+                "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (organizationId != null) localVarPathParams.Add("organization-id", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-            if (whereMembershipId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "where_membership_id", whereMembershipId)); // query parameter
-            if (whereEmail != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "where_email", whereEmail)); // query parameter
-            if (whereLastName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "where_last_name", whereLastName)); // query parameter
-            if (whereFirstName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "where_first_name", whereFirstName)); // query parameter
-            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
-            if (count != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "count", count)); // query parameter
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
             }
 
             // make the HTTP request
@@ -841,50 +993,44 @@ namespace SigningToday.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ListUsers", localVarResponse);
+                Exception exception = ExceptionFactory("UserIdIdentitiesGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse20012>(localVarStatusCode,
+            return new ApiResponse<List<Identity>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (InlineResponse20012) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20012)));
+                (List<Identity>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Identity>)));
         }
 
         /// <summary>
-        /// Edit one or more user properties This API allows to edit one or more user properties. 
+        /// Update a User This API allows to update a User.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <param name="updateUser">User properties to be edited</param>
-        /// <returns>InlineResponse2015</returns>
-        public InlineResponse2015 UpdateUser (string organizationId, Id userId, UpdateUser updateUser)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="user">User replacing current object.</param>
+        /// <returns></returns>
+        public void UserIdPut (Guid id, User user)
         {
-             ApiResponse<InlineResponse2015> localVarResponse = UpdateUserWithHttpInfo(organizationId, userId, updateUser);
-             return localVarResponse.Data;
+             UserIdPutWithHttpInfo(id, user);
         }
 
         /// <summary>
-        /// Edit one or more user properties This API allows to edit one or more user properties. 
+        /// Update a User This API allows to update a User.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <param name="updateUser">User properties to be edited</param>
-        /// <returns>ApiResponse of InlineResponse2015</returns>
-        public ApiResponse<InlineResponse2015> UpdateUserWithHttpInfo (string organizationId, Id userId, UpdateUser updateUser)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="user">User replacing current object.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> UserIdPutWithHttpInfo (Guid id, User user)
         {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->UpdateUser");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateUser");
-            // verify the required parameter 'updateUser' is set
-            if (updateUser == null)
-                throw new ApiException(400, "Missing required parameter 'updateUser' when calling UsersApi->UpdateUser");
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UserIdPut");
+            // verify the required parameter 'user' is set
+            if (user == null)
+                throw new ApiException(400, "Missing required parameter 'user' when calling UsersApi->UserIdPut");
 
-            var localVarPath = "/{organization-id}/users/{user-id}";
+            var localVarPath = "/user/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -900,27 +1046,27 @@ namespace SigningToday.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (organizationId != null) localVarPathParams.Add("organization-id", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-            if (userId != null) localVarPathParams.Add("user-id", this.Configuration.ApiClient.ParameterToString(userId)); // path parameter
-            if (updateUser != null && updateUser.GetType() != typeof(byte[]))
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (user != null && user.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(updateUser); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(user); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = updateUser; // byte array
+                localVarPostBody = user; // byte array
             }
 
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
             }
 
             // make the HTTP request
@@ -932,51 +1078,45 @@ namespace SigningToday.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("UpdateUser", localVarResponse);
+                Exception exception = ExceptionFactory("UserIdPut", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse2015>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (InlineResponse2015) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2015)));
+                null);
         }
 
         /// <summary>
-        /// Edit one or more user properties This API allows to edit one or more user properties. 
+        /// Update a User This API allows to update a User.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <param name="updateUser">User properties to be edited</param>
-        /// <returns>Task of InlineResponse2015</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2015> UpdateUserAsync (string organizationId, Id userId, UpdateUser updateUser)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="user">User replacing current object.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task UserIdPutAsync (Guid id, User user)
         {
-             ApiResponse<InlineResponse2015> localVarResponse = await UpdateUserAsyncWithHttpInfo(organizationId, userId, updateUser);
-             return localVarResponse.Data;
+             await UserIdPutAsyncWithHttpInfo(id, user);
 
         }
 
         /// <summary>
-        /// Edit one or more user properties This API allows to edit one or more user properties. 
+        /// Update a User This API allows to update a User.
         /// </summary>
         /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization </param>
-        /// <param name="userId">The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user </param>
-        /// <param name="updateUser">User properties to be edited</param>
-        /// <returns>Task of ApiResponse (InlineResponse2015)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2015>> UpdateUserAsyncWithHttpInfo (string organizationId, Id userId, UpdateUser updateUser)
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="user">User replacing current object.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UserIdPutAsyncWithHttpInfo (Guid id, User user)
         {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->UpdateUser");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateUser");
-            // verify the required parameter 'updateUser' is set
-            if (updateUser == null)
-                throw new ApiException(400, "Missing required parameter 'updateUser' when calling UsersApi->UpdateUser");
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UserIdPut");
+            // verify the required parameter 'user' is set
+            if (user == null)
+                throw new ApiException(400, "Missing required parameter 'user' when calling UsersApi->UserIdPut");
 
-            var localVarPath = "/{organization-id}/users/{user-id}";
+            var localVarPath = "/user/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -992,27 +1132,27 @@ namespace SigningToday.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (organizationId != null) localVarPathParams.Add("organization-id", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-            if (userId != null) localVarPathParams.Add("user-id", this.Configuration.ApiClient.ParameterToString(userId)); // path parameter
-            if (updateUser != null && updateUser.GetType() != typeof(byte[]))
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (user != null && user.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(updateUser); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(user); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = updateUser; // byte array
+                localVarPostBody = user; // byte array
             }
 
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
             }
 
             // make the HTTP request
@@ -1024,13 +1164,818 @@ namespace SigningToday.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("UpdateUser", localVarResponse);
+                Exception exception = ExceptionFactory("UserIdPut", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse2015>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (InlineResponse2015) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2015)));
+                null);
+        }
+
+        /// <summary>
+        /// Change the User role This API allows to change the permissions associated to the users, (**capabilities**) according to predefined user roles. 
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="newRole">The new **role** of the User. Allowed values are **admin**, **instructor**, **signer** </param>
+        /// <returns></returns>
+        public void UserIdRolePut (Guid id, string newRole)
+        {
+             UserIdRolePutWithHttpInfo(id, newRole);
+        }
+
+        /// <summary>
+        /// Change the User role This API allows to change the permissions associated to the users, (**capabilities**) according to predefined user roles. 
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="newRole">The new **role** of the User. Allowed values are **admin**, **instructor**, **signer** </param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> UserIdRolePutWithHttpInfo (Guid id, string newRole)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UserIdRolePut");
+            // verify the required parameter 'newRole' is set
+            if (newRole == null)
+                throw new ApiException(400, "Missing required parameter 'newRole' when calling UsersApi->UserIdRolePut");
+
+            var localVarPath = "/user/{id}/role";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (newRole != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "newRole", newRole)); // query parameter
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UserIdRolePut", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                null);
+        }
+
+        /// <summary>
+        /// Change the User role This API allows to change the permissions associated to the users, (**capabilities**) according to predefined user roles. 
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="newRole">The new **role** of the User. Allowed values are **admin**, **instructor**, **signer** </param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task UserIdRolePutAsync (Guid id, string newRole)
+        {
+             await UserIdRolePutAsyncWithHttpInfo(id, newRole);
+
+        }
+
+        /// <summary>
+        /// Change the User role This API allows to change the permissions associated to the users, (**capabilities**) according to predefined user roles. 
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The value of _the unique id_</param>
+        /// <param name="newRole">The new **role** of the User. Allowed values are **admin**, **instructor**, **signer** </param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UserIdRolePutAsyncWithHttpInfo (Guid id, string newRole)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UserIdRolePut");
+            // verify the required parameter 'newRole' is set
+            if (newRole == null)
+                throw new ApiException(400, "Missing required parameter 'newRole' when calling UsersApi->UserIdRolePut");
+
+            var localVarPath = "/user/{id}/role";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (newRole != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "newRole", newRole)); // query parameter
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UserIdRolePut", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                null);
+        }
+
+        /// <summary>
+        /// Retrieve Users This allows to get the list of the Users of an Organization.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>UsersGetResponse</returns>
+        public UsersGetResponse UsersGet (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string))
+        {
+             ApiResponse<UsersGetResponse> localVarResponse = UsersGetWithHttpInfo(top, skip, count, orderBy, filter);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve Users This allows to get the list of the Users of an Organization.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>ApiResponse of UsersGetResponse</returns>
+        public ApiResponse<UsersGetResponse> UsersGetWithHttpInfo (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string))
+        {
+
+            var localVarPath = "/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (top != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+            if (count != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$count", count)); // query parameter
+            if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderBy", orderBy)); // query parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UsersGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UsersGetResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (UsersGetResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersGetResponse)));
+        }
+
+        /// <summary>
+        /// Retrieve Users This allows to get the list of the Users of an Organization.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>Task of UsersGetResponse</returns>
+        public async System.Threading.Tasks.Task<UsersGetResponse> UsersGetAsync (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string))
+        {
+             ApiResponse<UsersGetResponse> localVarResponse = await UsersGetAsyncWithHttpInfo(top, skip, count, orderBy, filter);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Retrieve Users This allows to get the list of the Users of an Organization.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>Task of ApiResponse (UsersGetResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UsersGetResponse>> UsersGetAsyncWithHttpInfo (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string))
+        {
+
+            var localVarPath = "/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (top != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+            if (count != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$count", count)); // query parameter
+            if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderBy", orderBy)); // query parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UsersGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UsersGetResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (UsersGetResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UsersGetResponse)));
+        }
+
+        /// <summary>
+        /// Retrieve UserGroups This API allows to get the list of the UserGroups.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>UserGroupGetResponse</returns>
+        public UserGroupGetResponse UsersGroupsGet (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string))
+        {
+             ApiResponse<UserGroupGetResponse> localVarResponse = UsersGroupsGetWithHttpInfo(top, skip, count, orderBy, filter);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve UserGroups This API allows to get the list of the UserGroups.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>ApiResponse of UserGroupGetResponse</returns>
+        public ApiResponse<UserGroupGetResponse> UsersGroupsGetWithHttpInfo (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string))
+        {
+
+            var localVarPath = "/users/groups";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (top != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+            if (count != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$count", count)); // query parameter
+            if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderBy", orderBy)); // query parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UsersGroupsGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserGroupGetResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (UserGroupGetResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserGroupGetResponse)));
+        }
+
+        /// <summary>
+        /// Retrieve UserGroups This API allows to get the list of the UserGroups.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>Task of UserGroupGetResponse</returns>
+        public async System.Threading.Tasks.Task<UserGroupGetResponse> UsersGroupsGetAsync (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string))
+        {
+             ApiResponse<UserGroupGetResponse> localVarResponse = await UsersGroupsGetAsyncWithHttpInfo(top, skip, count, orderBy, filter);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Retrieve UserGroups This API allows to get the list of the UserGroups.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">A number of results to return. Applied after **$skip**  (optional)</param>
+        /// <param name="skip">An offset into the collection of results (optional)</param>
+        /// <param name="count">If true, the server includes the count of all the items in the response  (optional)</param>
+        /// <param name="orderBy">An ordering definition (eg. $orderBy&#x3D;updatedAt,desc) (optional)</param>
+        /// <param name="filter">A filter definition (eg. $filter&#x3D;name &#x3D;&#x3D; \&quot;Milk\&quot; or surname &#x3D;&#x3D; \&quot;Bread\&quot;) (optional)</param>
+        /// <returns>Task of ApiResponse (UserGroupGetResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserGroupGetResponse>> UsersGroupsGetAsyncWithHttpInfo (int top = default(int), long skip = default(long), bool count = default(bool), string orderBy = default(string), string filter = default(string))
+        {
+
+            var localVarPath = "/users/groups";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (top != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+            if (count != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$count", count)); // query parameter
+            if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderBy", orderBy)); // query parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UsersGroupsGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserGroupGetResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (UserGroupGetResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserGroupGetResponse)));
+        }
+
+        /// <summary>
+        /// Create a new UserGroups This API allows to create a new UserGroups.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGroup">UserGroup list to be added.</param>
+        /// <returns></returns>
+        public void UsersGroupsPost (List<UserGroup> userGroup)
+        {
+             UsersGroupsPostWithHttpInfo(userGroup);
+        }
+
+        /// <summary>
+        /// Create a new UserGroups This API allows to create a new UserGroups.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGroup">UserGroup list to be added.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> UsersGroupsPostWithHttpInfo (List<UserGroup> userGroup)
+        {
+            // verify the required parameter 'userGroup' is set
+            if (userGroup == null)
+                throw new ApiException(400, "Missing required parameter 'userGroup' when calling UsersApi->UsersGroupsPost");
+
+            var localVarPath = "/users/groups";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userGroup != null && userGroup.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(userGroup); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userGroup; // byte array
+            }
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UsersGroupsPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                null);
+        }
+
+        /// <summary>
+        /// Create a new UserGroups This API allows to create a new UserGroups.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGroup">UserGroup list to be added.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task UsersGroupsPostAsync (List<UserGroup> userGroup)
+        {
+             await UsersGroupsPostAsyncWithHttpInfo(userGroup);
+
+        }
+
+        /// <summary>
+        /// Create a new UserGroups This API allows to create a new UserGroups.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGroup">UserGroup list to be added.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UsersGroupsPostAsyncWithHttpInfo (List<UserGroup> userGroup)
+        {
+            // verify the required parameter 'userGroup' is set
+            if (userGroup == null)
+                throw new ApiException(400, "Missing required parameter 'userGroup' when calling UsersApi->UsersGroupsPost");
+
+            var localVarPath = "/users/groups";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userGroup != null && userGroup.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(userGroup); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userGroup; // byte array
+            }
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UsersGroupsPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                null);
+        }
+
+        /// <summary>
+        /// Create a new User This API allows to create a new User.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createUserRequest"></param>
+        /// <returns>Guid</returns>
+        public Guid UsersPost (CreateUserRequest createUserRequest)
+        {
+             ApiResponse<Guid> localVarResponse = UsersPostWithHttpInfo(createUserRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a new User This API allows to create a new User.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createUserRequest"></param>
+        /// <returns>ApiResponse of Guid</returns>
+        public ApiResponse<Guid> UsersPostWithHttpInfo (CreateUserRequest createUserRequest)
+        {
+            // verify the required parameter 'createUserRequest' is set
+            if (createUserRequest == null)
+                throw new ApiException(400, "Missing required parameter 'createUserRequest' when calling UsersApi->UsersPost");
+
+            var localVarPath = "/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (createUserRequest != null && createUserRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(createUserRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = createUserRequest; // byte array
+            }
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UsersPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Guid>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (Guid) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Guid)));
+        }
+
+        /// <summary>
+        /// Create a new User This API allows to create a new User.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createUserRequest"></param>
+        /// <returns>Task of Guid</returns>
+        public async System.Threading.Tasks.Task<Guid> UsersPostAsync (CreateUserRequest createUserRequest)
+        {
+             ApiResponse<Guid> localVarResponse = await UsersPostAsyncWithHttpInfo(createUserRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create a new User This API allows to create a new User.
+        /// </summary>
+        /// <exception cref="SigningToday.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createUserRequest"></param>
+        /// <returns>Task of ApiResponse (Guid)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Guid>> UsersPostAsyncWithHttpInfo (CreateUserRequest createUserRequest)
+        {
+            // verify the required parameter 'createUserRequest' is set
+            if (createUserRequest == null)
+                throw new ApiException(400, "Missing required parameter 'createUserRequest' when calling UsersApi->UsersPost");
+
+            var localVarPath = "/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (createUserRequest != null && createUserRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(createUserRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = createUserRequest; // byte array
+            }
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UsersPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Guid>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (Guid) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Guid)));
         }
 
     }
