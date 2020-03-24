@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**List&lt;IdentityEnroll&gt;**](IdentityEnroll.md) |  | [optional] 
-**Meta** | [**MetaDataSuccess**](MetaDataSuccess.md) |  | [optional] 
 **Pagination** | [**PaginationData**](PaginationData.md) |  | [optional] 
+**Meta** | [**MetaDataSuccess**](MetaDataSuccess.md) |  | [optional] 
+**Data** | [**Identity**](Identity.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -5,9 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**List&lt;User&gt;**](User.md) |  | [optional] 
 **Meta** | [**MetaDataSuccess**](MetaDataSuccess.md) |  | [optional] 
-**Pagination** | [**PaginationData**](PaginationData.md) |  | [optional] 
+**Data** | [**SignatureImplementationResponse**](SignatureImplementationResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

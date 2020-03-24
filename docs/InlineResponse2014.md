@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**Token**](Token.md) |  | [optional] 
 **Meta** | [**MetaDataSuccess**](MetaDataSuccess.md) |  | [optional] 
+**Data** | [**InlineResponse2014Data**](InlineResponse2014Data.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

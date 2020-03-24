@@ -1,4 +1,5 @@
 # SigningToday - the C# library for the Signing Today API
+
 *Signing Today* enables seamless integration of digital signatures into any
 website by the use of easy requests to our API. This is the smart way of
 adding digital signature support with a great user experience.
@@ -13,7 +14,7 @@ tokens.
 
 
 | Environment | Description | Endpoint |
-| ----------- | ----------- | -------- |
+| - -- -- -- -- -- | - -- -- -- -- -- | - -- -- -- - |
 | Sandbox     | Test environment | `https://sandbox.signingtoday.com` |
 | Live        | Production environment | `https://api.signingtoday.com` |
 
@@ -32,7 +33,7 @@ organization.
 **Example**
 
 ```json
-$ curl https://sandbox.signingtoday.com/api/v1/my-org/users \
+$ curl https://sandbox.signingtoday.com/api/v1/my-org/users \\
     -H 'Authorization: Token <access-token>'
 ```
 
@@ -41,7 +42,7 @@ $ curl https://sandbox.signingtoday.com/api/v1/my-org/users \
 APIs use the right HTTP verb in every situation.
 
 | Method   | Description                    |
-| -------- | ------------------------------ |
+| - -- -- -- - | - -- -- -- -- -- -- -- -- -- -- -- -- -- -- - |
 | `GET`    | Request data from a resource   |
 | `POST`   | Send data to create a resource |
 | `PUT`    | Update a resource              |
@@ -57,29 +58,29 @@ result like this:
 
 ```json
 {
-    "pagination": {
-      "count": 75,
-      "previous": "https://sandbox.signingtoday.com/api/v1/my-org/users?page=1",
-      "next": "https://sandbox.signingtoday.com/api/v1/my-org/users?page=3",
-      "pages": 8,
-      "page": 2
+    \"pagination\": {
+      \"count\": 75,
+      \"previous\": \"https://sandbox.signingtoday.com/api/v1/my-org/users?page=1\",
+      \"next\": \"https://sandbox.signingtoday.com/api/v1/my-org/users?page=3\",
+      \"pages\": 8,
+      \"page\": 2
     },
-    "meta": {
-      "code": 200
+    \"meta\": {
+      \"code\": 200
     },
-    "data": [
+    \"data\": [
       {
-        "id": "jdo",
-        "status": "enabled",
-        "type": "Basic user account",
-        "email": johndoe@dummyemail.com,
-        "first_name": "John",
-        "last_name": "Doe",
-        "wallet": [],
-        "created_by": "system",
-        "owner": false,
-        "automatic": false,
-        "rao": false
+        \"id\": \"jdo\",
+        \"status\": \"enabled\",
+        \"type\": \"Basic user account\",
+        \"email\": johndoe@dummyemail.com,
+        \"first_name\": \"John\",
+        \"last_name\": \"Doe\",
+        \"wallet\": [],
+        \"created_by\": \"system\",
+        \"owner\": false,
+        \"automatic\": false,
+        \"rao\": false
       },
       ...
     ]
@@ -102,12 +103,12 @@ The general structure of *Pagination* object is the following:
 
 ```json
 {
-    "pagination": {
-      "count": 75,
-      "previous": "https://sandbox.signingtoday.com/api/v1/my-org/users?page=1",
-      "next": "https://sandbox.signingtoday.com/api/v1/my-org/users?page=3",
-      "pages": 8,
-      "page": 2
+    \"pagination\": {
+      \"count\": 75,
+      \"previous\": \"https://sandbox.signingtoday.com/api/v1/my-org/users?page=1\",
+      \"next\": \"https://sandbox.signingtoday.com/api/v1/my-org/users?page=3\",
+      \"pages\": 8,
+      \"page\": 2
     },
     ...
   }
@@ -122,10 +123,10 @@ information, as follows:
 
 ```json
 {
-    "meta": {
-      "code": <HTTP STATUS CODE>,
-      "error_type": <STATUS CODE DESCRIPTION>,
-      "error_message": <ERROR DESCRIPTION>
+    \"meta\": {
+      \"code\": <HTTP STATUS CODE>,
+      \"error_type\": <STATUS CODE DESCRIPTION>,
+      \"error_message\": <ERROR DESCRIPTION>
     }
   }
 ```
@@ -165,9 +166,9 @@ about DSTs and/or identities. You can configurate it on application token
 level, in the *webhook* field, as follows:
 
 ```json
-"webhooks": {
-  "dst": "URL",
-  "identity": "URL"
+\"webhooks\": {
+  \"dst\": \"URL\",
+  \"identity\": \"URL\"
   }
 ```
 
@@ -184,11 +185,11 @@ Sends the following information:
 
 ```json
 {
-    "message": "DST_STATUS_CHANGED",
-    "data": {
-      "status": "<DST_STATUS>",
-      "dst": "<DST_ID>",
-      "reason": "<DST_REASON>"
+    \"message\": \"DST_STATUS_CHANGED\",
+    \"data\": {
+      \"status\": \"<DST_STATUS>\",
+      \"dst\": \"<DST_ID>\",
+      \"reason\": \"<DST_REASON>\"
     }
   }
 ```
@@ -199,24 +200,24 @@ Sends the following information:
 
 ```json
 {
-    "message": "SIGNATURE_STATUS_CHANGED",
-    "data": {
-      "status": "<SIGNATURE_STATUS>",
-      "group": <MEMBERSHIP_GROUP_INDEX>,
-      "dst": {
-        "id": "<DST_ID>",
-        "title": "<DST_TITLE>"
+    \"message\": \"SIGNATURE_STATUS_CHANGED\",
+    \"data\": {
+      \"status\": \"<SIGNATURE_STATUS>\",
+      \"group\": <MEMBERSHIP_GROUP_INDEX>,
+      \"dst\": {
+        \"id\": \"<DST_ID>\",
+        \"title\": \"<DST_TITLE>\"
       },
-      "signature": "<SIGNATURE_ID>",
-      "signer": "<SIGNER_USERNAME>",
-      "position": "<SIGNATURE_POSITION>",
-      "document": {
-        "display_name": "<DOCUMENT_TITLE>",
-        "id": "<DOCUMENT_ID>",
-        "order": <DOCUMENT_INDEX>
+      \"signature\": \"<SIGNATURE_ID>\",
+      \"signer\": \"<SIGNER_USERNAME>\",
+      \"position\": \"<SIGNATURE_POSITION>\",
+      \"document\": {
+        \"display_name\": \"<DOCUMENT_TITLE>\",
+        \"id\": \"<DOCUMENT_ID>\",
+        \"order\": <DOCUMENT_INDEX>
       },
-      "automatic": <DECLARES_IF_THE_SIGNER_IS_AUTOMATIC>,
-      "page": "<SIGNATURE_PAGE>"
+      \"automatic\": <DECLARES_IF_THE_SIGNER_IS_AUTOMATIC>,
+      \"page\": \"<SIGNATURE_PAGE>\"
     }
   }
 ```
@@ -232,11 +233,11 @@ Sends the following information:
 
 ```json
 {
-    "message": "IDENTITY_REQUEST_ENROLLED",
-    "data": {
-      "status": "<REQUEST_STATUS>",
-      "request": "<REQUEST_ID>",
-      "user": "<APPLICANT_USERNAME>"
+    \"message\": \"IDENTITY_REQUEST_ENROLLED\",
+    \"data\": {
+      \"status\": \"<REQUEST_STATUS>\",
+      \"request\": \"<REQUEST_ID>\",
+      \"user\": \"<APPLICANT_USERNAME>\"
     }
   }
 ```
@@ -272,68 +273,99 @@ data form:
 - **identity-certificate**: public key of the certificate
 
 
+
+
 This C# SDK is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
+
 - API version: 1.5.0
 - SDK version: 1.0.0
 - Build package: org.openapitools.codegen.languages.CSharpClientCodegen
     For more information, please visit [https://signing.today/contacts/](https://signing.today/contacts/)
+
 ## Frameworks supported
+
+
 - .NET 4.0 or later
 - Windows Phone 7.1 (Mango)
+
 ## Dependencies
+
+
 - [RestSharp](https://www.nuget.org/packages/RestSharp) - 105.1.0 or later
 - [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) - 7.0.0 or later
 - [JsonSubTypes](https://www.nuget.org/packages/JsonSubTypes/) - 1.2.0 or later
+
 The DLLs included in the package may not be the latest version. We recommend using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
+
 ```
 Install-Package RestSharp
 Install-Package Newtonsoft.Json
 Install-Package JsonSubTypes
 ```
+
 NOTE: RestSharp versions greater than 105.1.0 have a bug which causes file uploads to fail. See [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)
+
 ## Installation
+
 Run the following command to generate the DLL
+
 - [Mac/Linux] `/bin/sh build.sh`
 - [Windows] `build.bat`
+
 Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
+
 ```csharp
 using SigningToday.Api;
 using SigningToday.Client;
 using SigningToday.Model;
+
 ```
+
+
 ## Packaging
+
 A `.nuspec` is included with the project. You can follow the Nuget quickstart to [create](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package#create-the-package) and [publish](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package#publish-the-package) packages.
+
 This `.nuspec` uses placeholders from the `.csproj`, so build the `.csproj` directly:
+
 ```
 nuget pack -Build -OutputDirectory out SigningToday.csproj
 ```
+
 Then, publish to a [local feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/local-feeds) or [other host](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview) and consume the new package via Nuget as usual.
+
+
 ## Getting Started
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
 using SigningToday.Api;
 using SigningToday.Client;
 using SigningToday.Model;
+
 namespace Example
 {
     public class Example
     {
         public static void Main()
         {
+
             Configuration.Default.BasePath = "https://sandbox.signingtoday.com/api/v1";
             // Configure API key authorization: ApiKeyAuth
             Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new Bit4idPathgroupIdentitiesApi(Configuration.Default);
             var organizationId = api-demo;  // string | The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  (default to "api-demo")
             var identityId = new Id(); // Id | The **identity-id** is the uuid code that identifies an identity in the wallet of an user. It is, as well, used to restrict the requested operation to the scope of that identity 
             var inlineObject = new InlineObject(); // InlineObject | 
+
             try
             {
                 // Associate an appearance to an identity
-                InlineResponse2004 result = apiInstance.AssociateAppearance(organizationId, identityId, inlineObject);
+                InlineResponse2011 result = apiInstance.AssociateAppearance(organizationId, identityId, inlineObject);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -342,12 +374,16 @@ namespace Example
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
+
         }
     }
 }
 ```
+
 ## Documentation for API Endpoints
+
 All URIs are relative to *https://sandbox.signingtoday.com/api/v1*
+
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *Bit4idPathgroupIdentitiesApi* | [**AssociateAppearance**](docs/Bit4idPathgroupIdentitiesApi.md#associateappearance) | **POST** /{organization-id}/identities/{identity-id}/appearance | Associate an appearance to an identity
@@ -362,12 +398,14 @@ Class | Method | HTTP request | Description
 *Bit4idPathgroupIdentitiesApi* | [**ListIdentities**](docs/Bit4idPathgroupIdentitiesApi.md#listidentities) | **GET** /{organization-id}/identities | Enumerate the identities of an organization
 *Bit4idPathgroupIdentitiesApi* | [**ListUserEnrollments**](docs/Bit4idPathgroupIdentitiesApi.md#listuserenrollments) | **GET** /{organization-id}/users/{user-id}/identity-requests | List the enrollments of an user
 *Bit4idPathgroupIdentitiesApi* | [**ListUserIdentities**](docs/Bit4idPathgroupIdentitiesApi.md#listuseridentities) | **GET** /{organization-id}/users/{user-id}/wallet | Enumerate the identities of an user
+*Bit4idPathgroupIdentitiesApi* | [**RenewIdentity**](docs/Bit4idPathgroupIdentitiesApi.md#renewidentity) | **POST** /{organization-id}/identity-requests/{enrollment-id}/renew | Renew an Identity
 *Bit4idPathgroupIdentitiesApi* | [**RequestEnrollment**](docs/Bit4idPathgroupIdentitiesApi.md#requestenrollment) | **POST** /{organization-id}/enroll | Submit an enrollment request
 *Bit4idPathgroupOrganizationsApi* | [**GetOrganization**](docs/Bit4idPathgroupOrganizationsApi.md#getorganization) | **GET** /organizations/{organization-id} | Get the settings of an oraganization
 *Bit4idPathgroupOrganizationsApi* | [**PatchOrganization**](docs/Bit4idPathgroupOrganizationsApi.md#patchorganization) | **PATCH** /organizations/{organization-id} | Edit the settings of an organization
 *Bit4idPathgroupSignatureTransactionsApi* | [**CancelDST**](docs/Bit4idPathgroupSignatureTransactionsApi.md#canceldst) | **POST** /{organization-id}/signature-transactions/{dst-id}/cancel | Mark a DST as canceled
 *Bit4idPathgroupSignatureTransactionsApi* | [**CreateDST**](docs/Bit4idPathgroupSignatureTransactionsApi.md#createdst) | **POST** /{organization-id}/signature-transactions | Create a Digital Signature Transaction
 *Bit4idPathgroupSignatureTransactionsApi* | [**DeleteDST**](docs/Bit4idPathgroupSignatureTransactionsApi.md#deletedst) | **DELETE** /{organization-id}/signature-transactions/{dst-id} | Delete a Digital Signature Transaction
+*Bit4idPathgroupSignatureTransactionsApi* | [**DeleteDSTResources**](docs/Bit4idPathgroupSignatureTransactionsApi.md#deletedstresources) | **DELETE** /{organization-id}/signature-transactions/{dst-id}/resources | Delete the resources of a DST
 *Bit4idPathgroupSignatureTransactionsApi* | [**GetDST**](docs/Bit4idPathgroupSignatureTransactionsApi.md#getdst) | **GET** /{organization-id}/signature-transactions/{dst-id} | Get information about a DST
 *Bit4idPathgroupSignatureTransactionsApi* | [**GetDocument**](docs/Bit4idPathgroupSignatureTransactionsApi.md#getdocument) | **GET** /{organization-id}/documents/{document-id}/download | Download a document from a DST
 *Bit4idPathgroupSignatureTransactionsApi* | [**ListDSTs**](docs/Bit4idPathgroupSignatureTransactionsApi.md#listdsts) | **GET** /{organization-id}/signature-transactions | List the DSTs of an organization
@@ -398,12 +436,14 @@ Class | Method | HTTP request | Description
 *IdentitiesApi* | [**ListIdentities**](docs/IdentitiesApi.md#listidentities) | **GET** /{organization-id}/identities | Enumerate the identities of an organization
 *IdentitiesApi* | [**ListUserEnrollments**](docs/IdentitiesApi.md#listuserenrollments) | **GET** /{organization-id}/users/{user-id}/identity-requests | List the enrollments of an user
 *IdentitiesApi* | [**ListUserIdentities**](docs/IdentitiesApi.md#listuseridentities) | **GET** /{organization-id}/users/{user-id}/wallet | Enumerate the identities of an user
+*IdentitiesApi* | [**RenewIdentity**](docs/IdentitiesApi.md#renewidentity) | **POST** /{organization-id}/identity-requests/{enrollment-id}/renew | Renew an Identity
 *IdentitiesApi* | [**RequestEnrollment**](docs/IdentitiesApi.md#requestenrollment) | **POST** /{organization-id}/enroll | Submit an enrollment request
 *OrganizationsApi* | [**GetOrganization**](docs/OrganizationsApi.md#getorganization) | **GET** /organizations/{organization-id} | Get the settings of an oraganization
 *OrganizationsApi* | [**PatchOrganization**](docs/OrganizationsApi.md#patchorganization) | **PATCH** /organizations/{organization-id} | Edit the settings of an organization
 *SignatureTransactionsApi* | [**CancelDST**](docs/SignatureTransactionsApi.md#canceldst) | **POST** /{organization-id}/signature-transactions/{dst-id}/cancel | Mark a DST as canceled
 *SignatureTransactionsApi* | [**CreateDST**](docs/SignatureTransactionsApi.md#createdst) | **POST** /{organization-id}/signature-transactions | Create a Digital Signature Transaction
 *SignatureTransactionsApi* | [**DeleteDST**](docs/SignatureTransactionsApi.md#deletedst) | **DELETE** /{organization-id}/signature-transactions/{dst-id} | Delete a Digital Signature Transaction
+*SignatureTransactionsApi* | [**DeleteDSTResources**](docs/SignatureTransactionsApi.md#deletedstresources) | **DELETE** /{organization-id}/signature-transactions/{dst-id}/resources | Delete the resources of a DST
 *SignatureTransactionsApi* | [**GetDST**](docs/SignatureTransactionsApi.md#getdst) | **GET** /{organization-id}/signature-transactions/{dst-id} | Get information about a DST
 *SignatureTransactionsApi* | [**GetDocument**](docs/SignatureTransactionsApi.md#getdocument) | **GET** /{organization-id}/documents/{document-id}/download | Download a document from a DST
 *SignatureTransactionsApi* | [**ListDSTs**](docs/SignatureTransactionsApi.md#listdsts) | **GET** /{organization-id}/signature-transactions | List the DSTs of an organization
@@ -422,13 +462,14 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**GetUser**](docs/UsersApi.md#getuser) | **GET** /{organization-id}/users/{user-id} | Get information about an user
 *UsersApi* | [**ListUsers**](docs/UsersApi.md#listusers) | **GET** /{organization-id}/users | Enumerate the users of an organization
 *UsersApi* | [**UpdateUser**](docs/UsersApi.md#updateuser) | **PUT** /{organization-id}/users/{user-id} | Edit one or more user properties
+
+
 ## Documentation for Models
+
  - [Model.AutomaticSignature](docs/AutomaticSignature.md)
  - [Model.CreateIdentitybyToken](docs/CreateIdentitybyToken.md)
  - [Model.CreateSignatureTransaction](docs/CreateSignatureTransaction.md)
  - [Model.CreateToken](docs/CreateToken.md)
- - [Model.CreateTokenHttpOptions](docs/CreateTokenHttpOptions.md)
- - [Model.CreateTokenWebhooks](docs/CreateTokenWebhooks.md)
  - [Model.CreateUser](docs/CreateUser.md)
  - [Model.Document](docs/Document.md)
  - [Model.Document1](docs/Document1.md)
@@ -443,28 +484,30 @@ Class | Method | HTTP request | Description
  - [Model.InlineObject2](docs/InlineObject2.md)
  - [Model.InlineObject3](docs/InlineObject3.md)
  - [Model.InlineObject4](docs/InlineObject4.md)
+ - [Model.InlineObject5](docs/InlineObject5.md)
  - [Model.InlineResponse200](docs/InlineResponse200.md)
  - [Model.InlineResponse2001](docs/InlineResponse2001.md)
  - [Model.InlineResponse20010](docs/InlineResponse20010.md)
- - [Model.InlineResponse20010Data](docs/InlineResponse20010Data.md)
  - [Model.InlineResponse20011](docs/InlineResponse20011.md)
  - [Model.InlineResponse20012](docs/InlineResponse20012.md)
+ - [Model.InlineResponse20013](docs/InlineResponse20013.md)
+ - [Model.InlineResponse20013Data](docs/InlineResponse20013Data.md)
  - [Model.InlineResponse2002](docs/InlineResponse2002.md)
  - [Model.InlineResponse2003](docs/InlineResponse2003.md)
  - [Model.InlineResponse2004](docs/InlineResponse2004.md)
  - [Model.InlineResponse2005](docs/InlineResponse2005.md)
  - [Model.InlineResponse2006](docs/InlineResponse2006.md)
  - [Model.InlineResponse2007](docs/InlineResponse2007.md)
- - [Model.InlineResponse2007Meta](docs/InlineResponse2007Meta.md)
  - [Model.InlineResponse2008](docs/InlineResponse2008.md)
  - [Model.InlineResponse2009](docs/InlineResponse2009.md)
+ - [Model.InlineResponse2009Meta](docs/InlineResponse2009Meta.md)
  - [Model.InlineResponse201](docs/InlineResponse201.md)
  - [Model.InlineResponse2011](docs/InlineResponse2011.md)
  - [Model.InlineResponse2012](docs/InlineResponse2012.md)
  - [Model.InlineResponse2013](docs/InlineResponse2013.md)
  - [Model.InlineResponse2014](docs/InlineResponse2014.md)
+ - [Model.InlineResponse2014Data](docs/InlineResponse2014Data.md)
  - [Model.InlineResponse2015](docs/InlineResponse2015.md)
- - [Model.InlineResponse201Data](docs/InlineResponse201Data.md)
  - [Model.InlineResponse401](docs/InlineResponse401.md)
  - [Model.InlineResponse403](docs/InlineResponse403.md)
  - [Model.InlineResponse404](docs/InlineResponse404.md)
@@ -482,12 +525,21 @@ Class | Method | HTTP request | Description
  - [Model.SignatureTransaction](docs/SignatureTransaction.md)
  - [Model.SignatureWhere](docs/SignatureWhere.md)
  - [Model.Token](docs/Token.md)
+ - [Model.TokenHttpOptions](docs/TokenHttpOptions.md)
+ - [Model.TokenWebhooks](docs/TokenWebhooks.md)
  - [Model.UpdateOrganization](docs/UpdateOrganization.md)
  - [Model.UpdateToken](docs/UpdateToken.md)
  - [Model.UpdateUser](docs/UpdateUser.md)
  - [Model.User](docs/User.md)
+
+
 ## Documentation for Authorization
+
+
 ### ApiKeyAuth
+
 - **Type**: API key
+
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+

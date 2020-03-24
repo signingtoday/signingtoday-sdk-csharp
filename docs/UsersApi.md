@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreateUser
 
-> InlineResponse2015 CreateUser (string organizationId, CreateUser createUser)
+> InlineResponse201 CreateUser (string organizationId, CreateUser createUser)
 
 Create a user of the organization
 
@@ -47,7 +47,7 @@ namespace Example
             try
             {
                 // Create a user of the organization
-                InlineResponse2015 result = apiInstance.CreateUser(organizationId, createUser);
+                InlineResponse201 result = apiInstance.CreateUser(organizationId, createUser);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ## GetUser
 
-> InlineResponse2015 GetUser (string organizationId, Id userId)
+> InlineResponse201 GetUser (string organizationId, Id userId)
 
 Get information about an user
 
@@ -133,7 +133,7 @@ namespace Example
             try
             {
                 // Get information about an user
-                InlineResponse2015 result = apiInstance.GetUser(organizationId, userId);
+                InlineResponse201 result = apiInstance.GetUser(organizationId, userId);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ## ListUsers
 
-> InlineResponse20012 ListUsers (string organizationId, string whereMembershipId = null, string whereEmail = null, string whereLastName = null, string whereFirstName = null, int page = null, int count = null)
+> InlineResponse2001 ListUsers (string organizationId, string whereMembershipId = null, string whereEmail = null, string whereLastName = null, string whereFirstName = null, bool whereAutomatic = null, bool whereRao = null, int page = null, int count = null, string whereOrder = null)
 
 Enumerate the users of an organization
 
@@ -217,13 +217,16 @@ namespace Example
             var whereEmail = test@mail.com;  // string | Returns the users that have the specified email (optional) 
             var whereLastName = Doe;  // string | Returns the users that have the specified last name (optional) 
             var whereFirstName = John;  // string | Returns the users that have the specified first name (optional) 
+            var whereAutomatic = false;  // bool | If set up to **true** returns automatic users only, otherwise returns non automatic users only (optional) 
+            var whereRao = false;  // bool | If set up to **true** returns rao users only, otherwise returns non rao users only (optional) 
             var page = 1;  // int | Restricts the search to the chosen page (optional) 
             var count = 56;  // int | Sets the number of users per page to display (optional)  (default to 100)
+            var whereOrder = where_first_name;  // string | The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \"**-**\" in front of the value indicates descending order), then the second value and so on (optional) 
 
             try
             {
                 // Enumerate the users of an organization
-                InlineResponse20012 result = apiInstance.ListUsers(organizationId, whereMembershipId, whereEmail, whereLastName, whereFirstName, page, count);
+                InlineResponse2001 result = apiInstance.ListUsers(organizationId, whereMembershipId, whereEmail, whereLastName, whereFirstName, whereAutomatic, whereRao, page, count, whereOrder);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -247,12 +250,15 @@ Name | Type | Description  | Notes
  **whereEmail** | **string**| Returns the users that have the specified email | [optional] 
  **whereLastName** | **string**| Returns the users that have the specified last name | [optional] 
  **whereFirstName** | **string**| Returns the users that have the specified first name | [optional] 
+ **whereAutomatic** | **bool**| If set up to **true** returns automatic users only, otherwise returns non automatic users only | [optional] 
+ **whereRao** | **bool**| If set up to **true** returns rao users only, otherwise returns non rao users only | [optional] 
  **page** | **int**| Restricts the search to the chosen page | [optional] 
  **count** | **int**| Sets the number of users per page to display | [optional] [default to 100]
+ **whereOrder** | **string**| The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \&quot;**-**\&quot; in front of the value indicates descending order), then the second value and so on | [optional] 
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -279,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## UpdateUser
 
-> InlineResponse2015 UpdateUser (string organizationId, Id userId, UpdateUser updateUser)
+> InlineResponse201 UpdateUser (string organizationId, Id userId, UpdateUser updateUser)
 
 Edit one or more user properties
 
@@ -314,7 +320,7 @@ namespace Example
             try
             {
                 // Edit one or more user properties
-                InlineResponse2015 result = apiInstance.UpdateUser(organizationId, userId, updateUser);
+                InlineResponse201 result = apiInstance.UpdateUser(organizationId, userId, updateUser);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -339,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 

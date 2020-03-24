@@ -16,13 +16,14 @@ Method | HTTP request | Description
 [**ListIdentities**](IdentitiesApi.md#listidentities) | **GET** /{organization-id}/identities | Enumerate the identities of an organization
 [**ListUserEnrollments**](IdentitiesApi.md#listuserenrollments) | **GET** /{organization-id}/users/{user-id}/identity-requests | List the enrollments of an user
 [**ListUserIdentities**](IdentitiesApi.md#listuseridentities) | **GET** /{organization-id}/users/{user-id}/wallet | Enumerate the identities of an user
+[**RenewIdentity**](IdentitiesApi.md#renewidentity) | **POST** /{organization-id}/identity-requests/{enrollment-id}/renew | Renew an Identity
 [**RequestEnrollment**](IdentitiesApi.md#requestenrollment) | **POST** /{organization-id}/enroll | Submit an enrollment request
 
 
 
 ## AssociateAppearance
 
-> InlineResponse2004 AssociateAppearance (string organizationId, Id identityId, InlineObject inlineObject)
+> InlineResponse2011 AssociateAppearance (string organizationId, Id identityId, InlineObject inlineObject)
 
 Associate an appearance to an identity
 
@@ -57,7 +58,7 @@ namespace Example
             try
             {
                 // Associate an appearance to an identity
-                InlineResponse2004 result = apiInstance.AssociateAppearance(organizationId, identityId, inlineObject);
+                InlineResponse2011 result = apiInstance.AssociateAppearance(organizationId, identityId, inlineObject);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -82,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2011**](InlineResponse2011.md)
 
 ### Authorization
 
@@ -110,7 +111,7 @@ Name | Type | Description  | Notes
 
 ## AssociateIdentity
 
-> InlineResponse2004 AssociateIdentity (string organizationId, Id userId, IdentityAssociation identityAssociation)
+> InlineResponse2011 AssociateIdentity (string organizationId, Id userId, IdentityAssociation identityAssociation)
 
 Associate to an user an already existing identity
 
@@ -145,7 +146,7 @@ namespace Example
             try
             {
                 // Associate to an user an already existing identity
-                InlineResponse2004 result = apiInstance.AssociateIdentity(organizationId, userId, identityAssociation);
+                InlineResponse2011 result = apiInstance.AssociateIdentity(organizationId, userId, identityAssociation);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -170,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2011**](InlineResponse2011.md)
 
 ### Authorization
 
@@ -281,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAppearance
 
-> InlineResponse2004 DeleteAppearance (string organizationId, Id identityId)
+> InlineResponse2011 DeleteAppearance (string organizationId, Id identityId)
 
 Delete the appearance of an identity
 
@@ -315,7 +316,7 @@ namespace Example
             try
             {
                 // Delete the appearance of an identity
-                InlineResponse2004 result = apiInstance.DeleteAppearance(organizationId, identityId);
+                InlineResponse2011 result = apiInstance.DeleteAppearance(organizationId, identityId);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -339,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2011**](InlineResponse2011.md)
 
 ### Authorization
 
@@ -451,7 +452,7 @@ Name | Type | Description  | Notes
 
 ## DeleteIdentity
 
-> InlineResponse2003 DeleteIdentity (string organizationId, Id identityId)
+> InlineResponse2006 DeleteIdentity (string organizationId, Id identityId)
 
 Delete an identity
 
@@ -485,7 +486,7 @@ namespace Example
             try
             {
                 // Delete an identity
-                InlineResponse2003 result = apiInstance.DeleteIdentity(organizationId, identityId);
+                InlineResponse2006 result = apiInstance.DeleteIdentity(organizationId, identityId);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -509,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -536,7 +537,7 @@ Name | Type | Description  | Notes
 
 ## GetEnrollmentRequest
 
-> InlineResponse2011 GetEnrollmentRequest (string organizationId, Id enrollmentId)
+> InlineResponse2007 GetEnrollmentRequest (string organizationId, Id enrollmentId)
 
 Get information about an enrollment request
 
@@ -570,7 +571,7 @@ namespace Example
             try
             {
                 // Get information about an enrollment request
-                InlineResponse2011 result = apiInstance.GetEnrollmentRequest(organizationId, enrollmentId);
+                InlineResponse2007 result = apiInstance.GetEnrollmentRequest(organizationId, enrollmentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -594,7 +595,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -621,7 +622,7 @@ Name | Type | Description  | Notes
 
 ## GetIdentity
 
-> InlineResponse2002 GetIdentity (string organizationId, Id identityId)
+> InlineResponse2005 GetIdentity (string organizationId, Id identityId, string whereOrder = null)
 
 Get information about an identity
 
@@ -651,11 +652,12 @@ namespace Example
             var apiInstance = new IdentitiesApi(Configuration.Default);
             var organizationId = api-demo;  // string | The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  (default to "api-demo")
             var identityId = new Id(); // Id | The **identity-id** is the uuid code that identifies an identity in the wallet of an user. It is, as well, used to restrict the requested operation to the scope of that identity 
+            var whereOrder = where_first_name;  // string | The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \"**-**\" in front of the value indicates descending order), then the second value and so on (optional) 
 
             try
             {
                 // Get information about an identity
-                InlineResponse2002 result = apiInstance.GetIdentity(organizationId, identityId);
+                InlineResponse2005 result = apiInstance.GetIdentity(organizationId, identityId, whereOrder);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -676,10 +678,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  | [default to &quot;api-demo&quot;]
  **identityId** | [**Id**](Id.md)| The **identity-id** is the uuid code that identifies an identity in the wallet of an user. It is, as well, used to restrict the requested operation to the scope of that identity  | 
+ **whereOrder** | **string**| The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \&quot;**-**\&quot; in front of the value indicates descending order), then the second value and so on | [optional] 
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -706,7 +709,7 @@ Name | Type | Description  | Notes
 
 ## ListEnrollmentRequests
 
-> InlineResponse2005 ListEnrollmentRequests (string organizationId, string whereProvider = null, string whereUser = null, string whereFirstName = null, string whereLastName = null, string whereRegisteredBy = null, string whereFiscalCode = null, int page = null, int count = null)
+> InlineResponse2003 ListEnrollmentRequests (string organizationId, string whereProvider = null, string whereUser = null, string whereFirstName = null, string whereLastName = null, string whereRegisteredBy = null, string whereFiscalCode = null, int page = null, int count = null, string whereOrder = null)
 
 Enumerate the enrollment requests of an organization
 
@@ -743,11 +746,12 @@ namespace Example
             var whereFiscalCode = MLLSNT82P65Z404U;  // string | Returns the identity requests have the specified fiscal code (optional) 
             var page = 1;  // int | Restricts the search to the chosen page (optional) 
             var count = 56;  // int | Sets the number of users per page to display (optional)  (default to 100)
+            var whereOrder = where_first_name;  // string | The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \"**-**\" in front of the value indicates descending order), then the second value and so on (optional) 
 
             try
             {
                 // Enumerate the enrollment requests of an organization
-                InlineResponse2005 result = apiInstance.ListEnrollmentRequests(organizationId, whereProvider, whereUser, whereFirstName, whereLastName, whereRegisteredBy, whereFiscalCode, page, count);
+                InlineResponse2003 result = apiInstance.ListEnrollmentRequests(organizationId, whereProvider, whereUser, whereFirstName, whereLastName, whereRegisteredBy, whereFiscalCode, page, count, whereOrder);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -775,10 +779,11 @@ Name | Type | Description  | Notes
  **whereFiscalCode** | **string**| Returns the identity requests have the specified fiscal code | [optional] 
  **page** | **int**| Restricts the search to the chosen page | [optional] 
  **count** | **int**| Sets the number of users per page to display | [optional] [default to 100]
+ **whereOrder** | **string**| The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \&quot;**-**\&quot; in front of the value indicates descending order), then the second value and so on | [optional] 
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -805,7 +810,7 @@ Name | Type | Description  | Notes
 
 ## ListIdentities
 
-> InlineResponse2001 ListIdentities (string organizationId, string whereProvider = null, string whereUser = null, string whereFirstName = null, string whereLastName = null, string whereRegisteredBy = null, string whereFiscalCode = null, int page = null, int count = null)
+> InlineResponse2002 ListIdentities (string organizationId, string whereProvider = null, string whereUser = null, string whereFirstName = null, string whereLastName = null, string whereRegisteredBy = null, string whereFiscalCode = null, int page = null, int count = null, string whereOrder = null)
 
 Enumerate the identities of an organization
 
@@ -842,11 +847,12 @@ namespace Example
             var whereFiscalCode = MLLSNT82P65Z404U;  // string | Returns the identities that have the specified fiscal code (optional) 
             var page = 1;  // int | Restricts the search to the chosen page (optional) 
             var count = 56;  // int | Sets the number of users per page to display (optional)  (default to 100)
+            var whereOrder = where_first_name;  // string | The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \"**-**\" in front of the value indicates descending order), then the second value and so on (optional) 
 
             try
             {
                 // Enumerate the identities of an organization
-                InlineResponse2001 result = apiInstance.ListIdentities(organizationId, whereProvider, whereUser, whereFirstName, whereLastName, whereRegisteredBy, whereFiscalCode, page, count);
+                InlineResponse2002 result = apiInstance.ListIdentities(organizationId, whereProvider, whereUser, whereFirstName, whereLastName, whereRegisteredBy, whereFiscalCode, page, count, whereOrder);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -874,10 +880,11 @@ Name | Type | Description  | Notes
  **whereFiscalCode** | **string**| Returns the identities that have the specified fiscal code | [optional] 
  **page** | **int**| Restricts the search to the chosen page | [optional] 
  **count** | **int**| Sets the number of users per page to display | [optional] [default to 100]
+ **whereOrder** | **string**| The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \&quot;**-**\&quot; in front of the value indicates descending order), then the second value and so on | [optional] 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -904,7 +911,7 @@ Name | Type | Description  | Notes
 
 ## ListUserEnrollments
 
-> InlineResponse2005 ListUserEnrollments (string organizationId, Id userId, int page = null, int count = null)
+> InlineResponse2003 ListUserEnrollments (string organizationId, Id userId, int page = null, int count = null, string whereOrder = null)
 
 List the enrollments of an user
 
@@ -936,11 +943,12 @@ namespace Example
             var userId = new Id(); // Id | The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user 
             var page = 1;  // int | Restricts the search to the chosen page (optional) 
             var count = 56;  // int | Sets the number of users per page to display (optional)  (default to 100)
+            var whereOrder = where_first_name;  // string | The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \"**-**\" in front of the value indicates descending order), then the second value and so on (optional) 
 
             try
             {
                 // List the enrollments of an user
-                InlineResponse2005 result = apiInstance.ListUserEnrollments(organizationId, userId, page, count);
+                InlineResponse2003 result = apiInstance.ListUserEnrollments(organizationId, userId, page, count, whereOrder);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -963,10 +971,11 @@ Name | Type | Description  | Notes
  **userId** | [**Id**](Id.md)| The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user  | 
  **page** | **int**| Restricts the search to the chosen page | [optional] 
  **count** | **int**| Sets the number of users per page to display | [optional] [default to 100]
+ **whereOrder** | **string**| The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \&quot;**-**\&quot; in front of the value indicates descending order), then the second value and so on | [optional] 
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -993,7 +1002,7 @@ Name | Type | Description  | Notes
 
 ## ListUserIdentities
 
-> InlineResponse2001 ListUserIdentities (string organizationId, Id userId, int page = null, int count = null)
+> InlineResponse2002 ListUserIdentities (string organizationId, Id userId, int page = null, int count = null, string whereOrder = null)
 
 Enumerate the identities of an user
 
@@ -1025,11 +1034,12 @@ namespace Example
             var userId = new Id(); // Id | The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user 
             var page = 1;  // int | Restricts the search to the chosen page (optional) 
             var count = 56;  // int | Sets the number of users per page to display (optional)  (default to 100)
+            var whereOrder = where_first_name;  // string | The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \"**-**\" in front of the value indicates descending order), then the second value and so on (optional) 
 
             try
             {
                 // Enumerate the identities of an user
-                InlineResponse2001 result = apiInstance.ListUserIdentities(organizationId, userId, page, count);
+                InlineResponse2002 result = apiInstance.ListUserIdentities(organizationId, userId, page, count, whereOrder);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -1052,10 +1062,11 @@ Name | Type | Description  | Notes
  **userId** | [**Id**](Id.md)| The **user-id** is the uuid code that identifies a user of an organization. It is used as a path parameter to restrict the requested operation to the scope of that user  | 
  **page** | **int**| Restricts the search to the chosen page | [optional] 
  **count** | **int**| Sets the number of users per page to display | [optional] [default to 100]
+ **whereOrder** | **string**| The **where_order** query parameter takes one or more values separated by a comma and a space. The result will be ordered by the first value (ascending order is implied; a \&quot;**-**\&quot; in front of the value indicates descending order), then the second value and so on | [optional] 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -1080,9 +1091,97 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## RenewIdentity
+
+> InlineResponse2007 RenewIdentity (string organizationId, Id enrollmentId, InlineObject1 inlineObject1)
+
+Renew an Identity
+
+This API allows to renew an Identity of a user. 
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using SigningToday.Api;
+using SigningToday.Client;
+using SigningToday.Model;
+
+namespace Example
+{
+    public class RenewIdentityExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://sandbox.signingtoday.com/api/v1";
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new IdentitiesApi(Configuration.Default);
+            var organizationId = api-demo;  // string | The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  (default to "api-demo")
+            var enrollmentId = new Id(); // Id | The **enrollment-id** is the uuid code that identifies a specific enrollment request 
+            var inlineObject1 = new InlineObject1(); // InlineObject1 | 
+
+            try
+            {
+                // Renew an Identity
+                InlineResponse2007 result = apiInstance.RenewIdentity(organizationId, enrollmentId, inlineObject1);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling IdentitiesApi.RenewIdentity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  | [default to &quot;api-demo&quot;]
+ **enrollmentId** | [**Id**](Id.md)| The **enrollment-id** is the uuid code that identifies a specific enrollment request  | 
+ **inlineObject1** | [**InlineObject1**](InlineObject1.md)|  | 
+
+### Return type
+
+[**InlineResponse2007**](InlineResponse2007.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## RequestEnrollment
 
-> InlineResponse2011 RequestEnrollment (string organizationId, IdentityRequest identityRequest)
+> InlineResponse2007 RequestEnrollment (string organizationId, IdentityRequest identityRequest)
 
 Submit an enrollment request
 
@@ -1116,7 +1215,7 @@ namespace Example
             try
             {
                 // Submit an enrollment request
-                InlineResponse2011 result = apiInstance.RequestEnrollment(organizationId, identityRequest);
+                InlineResponse2007 result = apiInstance.RequestEnrollment(organizationId, identityRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -1140,7 +1239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 

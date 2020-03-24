@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**User**](User.md) |  | [optional] 
 **Meta** | [**MetaDataSuccess**](MetaDataSuccess.md) |  | [optional] 
+**Data** | [**Token**](Token.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

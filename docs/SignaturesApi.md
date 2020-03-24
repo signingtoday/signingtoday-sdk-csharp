@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateChannel
 
-> InlineResponse201 CreateChannel (string organizationId, Id dstId)
+> InlineResponse2014 CreateChannel (string organizationId, Id dstId)
 
 Create a channel
 
@@ -48,7 +48,7 @@ namespace Example
             try
             {
                 // Create a channel
-                InlineResponse201 result = apiInstance.CreateChannel(organizationId, dstId);
+                InlineResponse2014 result = apiInstance.CreateChannel(organizationId, dstId);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ## DeclineDST
 
-> InlineResponse2013 DeclineDST (string organizationId, Id signatureId, InlineObject2 inlineObject2)
+> InlineResponse2013 DeclineDST (string organizationId, Id signatureId, InlineObject5 inlineObject5)
 
 Decline a Digital Signature Transaction
 
@@ -129,12 +129,12 @@ namespace Example
             var apiInstance = new SignaturesApi(Configuration.Default);
             var organizationId = api-demo;  // string | The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  (default to "api-demo")
             var signatureId = new Id(); // Id | The **signature-id** is the uuid code that identifies a signature that has to be performed into a digital signature transaction. It is usually used in the API endpoints to perform, decline or cancel a digital signature transaction 
-            var inlineObject2 = new InlineObject2(); // InlineObject2 | 
+            var inlineObject5 = new InlineObject5(); // InlineObject5 | 
 
             try
             {
                 // Decline a Digital Signature Transaction
-                InlineResponse2013 result = apiInstance.DeclineDST(organizationId, signatureId, inlineObject2);
+                InlineResponse2013 result = apiInstance.DeclineDST(organizationId, signatureId, inlineObject5);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| The **organization-id** represents an organization that is included in the SigninToday application, also know as **slug** and it is used as a path parameter to restrict the asked functionality to the specified organization  | [default to &quot;api-demo&quot;]
  **signatureId** | [**Id**](Id.md)| The **signature-id** is the uuid code that identifies a signature that has to be performed into a digital signature transaction. It is usually used in the API endpoints to perform, decline or cancel a digital signature transaction  | 
- **inlineObject2** | [**InlineObject2**](InlineObject2.md)|  | 
+ **inlineObject5** | [**InlineObject5**](InlineObject5.md)|  | 
 
 ### Return type
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ## PerformDST
 
-> InlineResponse2008 PerformDST (string organizationId, Id signatureId, AutomaticSignature automaticSignature)
+> InlineResponse20011 PerformDST (string organizationId, Id signatureId, AutomaticSignature automaticSignature)
 
 Sign a DST with an automatic signer
 
@@ -223,7 +223,7 @@ namespace Example
             try
             {
                 // Sign a DST with an automatic signer
-                InlineResponse2008 result = apiInstance.PerformDST(organizationId, signatureId, automaticSignature);
+                InlineResponse20011 result = apiInstance.PerformDST(organizationId, signatureId, automaticSignature);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ## PerformSignature
 
-> InlineResponse2009 PerformSignature (string organizationId, Id signatureId, Id identityId, InlineObject3 inlineObject3)
+> InlineResponse20012 PerformSignature (string organizationId, Id signatureId, Id identityId, InlineObject3 inlineObject3)
 
 Perform a Signature
 
@@ -312,7 +312,7 @@ namespace Example
             try
             {
                 // Perform a Signature
-                InlineResponse2009 result = apiInstance.PerformSignature(organizationId, signatureId, identityId, inlineObject3);
+                InlineResponse20012 result = apiInstance.PerformSignature(organizationId, signatureId, identityId, inlineObject3);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ## PerformSignatureWithSession
 
-> InlineResponse20010 PerformSignatureWithSession (string organizationId, Id signatureId, InlineObject4 inlineObject4)
+> InlineResponse20013 PerformSignatureWithSession (string organizationId, Id signatureId, InlineObject4 inlineObject4)
 
 Perform a Signature with session
 
@@ -401,7 +401,7 @@ namespace Example
             try
             {
                 // Perform a Signature with session
-                InlineResponse20010 result = apiInstance.PerformSignatureWithSession(organizationId, signatureId, inlineObject4);
+                InlineResponse20013 result = apiInstance.PerformSignatureWithSession(organizationId, signatureId, inlineObject4);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
