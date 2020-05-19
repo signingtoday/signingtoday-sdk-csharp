@@ -12,7 +12,7 @@ Contact: smartcloud@bit4id.com
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E18E998B-D6D4-46CD-9D31-82D487F73D31}</ProjectGuid>
+    <ProjectGuid>{FB99CAAD-41F6-43A5-B101-CBA30CC0D139}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SigningToday</RootNamespace>
